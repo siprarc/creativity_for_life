@@ -1,0 +1,115 @@
+td,th {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+/* Change margin of pages */
+body {
+margin: 50px;
+}
+table {
+border-collapse: collapse:
+}
+/* Change font color and size for h1 */
+h1 {
+	font-size: 40px;
+	color: black;
+}
+/* Change picture size */
+img {
+  width: 500px;
+}
+/* Change font color and size for h2 */
+h2 {
+	font-size: 20px;
+	color: black;
+}
+/* Justify Main_page_body */
+.main_page_body {
+text-align: justify-all;
+}
+
+
+/* Centered Image Code */
+ div {
+      display: flex;
+      justify-content: center;
+    }
+
+/* Two image containers (use 25% for four, use 33.33% for three and 50% for two, etc) */
+.column {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* Five image containers (use 20% for five) */
+.column {
+  float: left;
+  width: 20%;
+  padding: 10px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/*Resizing the tall galss picture */
+.tall-glasses{
+	height: 360px;
+	width: 500px;
+}
+/* CSS Centering Code with the Type Selector "h1" */ 
+
+h1 {
+text-align: center;
+}
+
+/* Styling */
+
+.my_quotes{
+  margin: auto;
+  width: 640px; 
+  padding: 50px;
+  font-family: sans-serif; 
+  color: blue;    
+}
+/*Create boxes */
+.nav-anchor {
+height: 100px;
+width: 100px;	
+border: 1px solid black;
+display: block;
+position: absolute;
+}
+/*Navigate container */
+.nav-container {
+position: relative;	
+}
+.box1 {
+	top: 0px;
+	left: 0px;
+	background-color: antiquewhite;
+}
+.box2 {
+	top: 50px;
+	left: 50px;
+	background-color: antiquewhite;
+}
+.box3 {
+	top: 100px;
+	left: 100px;
+	background-color: antiquewhite;
+}
+/*Create tag-line */
+.tag-line {
+	font-weight: bold;
+	color: blue;
+}
