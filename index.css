@@ -108,8 +108,34 @@ position: relative;
 	left: 100px;
 	background-color: antiquewhite;
 }
+.box4 {
+	top: 100px;
+	left: 100px;
+	background-color: antiquewhite;
+}
+.box5 {
+	top: 100px;
+	left: 100px;
+	background-color: antiquewhite;
+}
 /*Create tag-line */
 .tag-line {
 	font-weight: bold;
 	color: blue;
+}
+/*Create horizontal nav bar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: right;
+}
+
+a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
 }
