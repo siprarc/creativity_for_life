@@ -23,6 +23,16 @@ h2 {
 	font-size: 20px;
 	color: black;
 }
+/*Sizing pis on main page*/
+.main_page_photos{
+height: 300px;	
+} 
+/*Scroll photos on main page*/
+.main_page_photo_container{
+overflow-x:scroll;	
+}
+
+
 /* Justify Main_page_body */
 .main_page_body {
 text-align: justify-all;
