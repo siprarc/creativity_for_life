@@ -2,6 +2,7 @@ td,th {
 	border: 1px solid black;
 	border-collapse: collapse;
 }
+
 /* Change margin of pages */
 body {
 margin: 50px;
@@ -9,35 +10,38 @@ margin: 50px;
 table {
 border-collapse: collapse:
 }
+
 /* Change font color and size for h1 */
 h1 {
 	font-size: 40px;
 	color: black;
 }
+
 /* Change picture size */
 img {
   width: 500px;
 }
+
 /* Change font color and size for h2 */
 h2 {
 	font-size: 20px;
 	color: black;
 }
-/*Sizing pis on main page*/
+
+/*Sizing pics on main page*/
 .main_page_photos{
 height: 300px;	
 } 
+
 /*Scroll photos on main page*/
 .main_page_photo_container{
 overflow-x:scroll;	
 }
 
-
 /* Justify Main_page_body */
 .main_page_body {
 text-align: justify-all;
 }
-
 
 /* Centered Image Code */
  div {
@@ -58,6 +62,7 @@ text-align: justify-all;
   clear: both;
   display: table;
 }
+
 /* Five image containers (use 20% for five) */
 .column {
   float: left;
@@ -71,19 +76,19 @@ text-align: justify-all;
   clear: both;
   display: table;
 }
+
 /*Resizing the tall galss picture */
 .tall-glasses{
 	height: 360px;
 	width: 500px;
 }
-/* CSS Centering Code with the Type Selector "h1" */ 
 
+/* CSS Centering Code with the Type Selector "h1" */ 
 h1 {
 text-align: center;
 }
 
 /* Styling */
-
 .my_quotes{
   margin: auto;
   width: 640px; 
@@ -91,6 +96,7 @@ text-align: center;
   font-family: sans-serif; 
   color: blue;    
 }
+
 /*Create boxes */
 .nav-anchor {
 height: 100px;
@@ -99,6 +105,7 @@ border: 1px solid black;
 display: block;
 position: absolute;
 }
+
 /*Navigate container */
 .nav-container {
 position: relative;
@@ -135,19 +142,17 @@ margin-left: 30%;
 	font-weight: bold;
 	color: blue;
 }
+
 /*Create horizontal nav bar*/
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-
 li {
   float: right;
 }
-
 a {
   display: block;
   padding: 8px;
-  background-color: #dddddd;
 }
