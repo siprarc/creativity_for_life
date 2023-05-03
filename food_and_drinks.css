@@ -1,0 +1,8 @@
+/*Sizing top pic on food page*/
+.main_food&drink_photo{
+height: 100px;	
+} 
+
+.image-text-wrapper {
+display:flex;
+}

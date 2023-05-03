@@ -35,7 +35,7 @@ height: 300px;
 
 /*Scroll photos on main page*/
 .main_page_photo_container{
-overflow-x:scroll;	
+overflow-x:visible;	
 }
 
 /* Justify Main_page_body */
@@ -90,9 +90,9 @@ text-align: center;
 
 /* Styling */
 .my_quotes{
-  margin: auto;
+  margin: 50;
   width: 640px; 
-  padding: 50px;
+  padding: 30px;
   font-family: sans-serif; 
   color: blue;    
 }
