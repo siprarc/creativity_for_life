@@ -44,10 +44,10 @@ text-align: justify-all;
 }
 
 /* Centered Image Code */
- div {
+ /*div {
       display: flex;
       justify-content: center;
-    }
+    }*/
 
 /* Two image containers (use 25% for four, use 33.33% for three and 50% for two, etc) */
 .column {
@@ -152,10 +152,10 @@ ul {
 li {
   float: right;
 }
-a {
+/*a {
   display: block;
   padding: 8px;
-}
+}*/
 
 /* Navbar container */
 .navbar {
