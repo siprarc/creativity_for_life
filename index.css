@@ -30,12 +30,51 @@ h2 {
 
 /*Sizing pics on main page*/
 .main_page_photos{
-height: 300px;	
+height: 400px;	
 } 
 
 /*Scroll photos on main page*/
-.main_page_photo_container{
+/*.main_page_photo_container{
 overflow-x:visible;	
+}*/
+.main_page_photo_container {
+	display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+}
+.main_page_photo_container {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 100%;
+  animation: scroll-x 20s linear infinite;
+}
+
+@keyframes main_page_photo_container {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 /* Justify Main_page_body */
