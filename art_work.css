@@ -1,4 +1,8 @@
-.table-container {
+/*Center justify main photo*/
+.art_page_photo_container {
 display:flex;
-justify-content: center;
+justify-content: center;	
 }
+
+
+
