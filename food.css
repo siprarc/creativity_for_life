@@ -1,0 +1,11 @@
+/*Center justify main photo*/
+.food_page_photo_container {
+display:flex;
+justify-content: center;	
+}
+/*Center justify Various Art buttons*/
+.table-container {
+display:flex;
+justify-content: center;
+font-size: 40px;
+}
