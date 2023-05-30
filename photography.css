@@ -1,0 +1,11 @@
+/*Center justify main photo*/
+.photography_page_photo{
+align-items: center;	
+}
+
+/*Center justify Various Art buttons*/
+.table-container {
+display:flex;
+justify-content: center;
+font-size: 40px;
+}
