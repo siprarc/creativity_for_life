@@ -269,6 +269,7 @@ li {
 /*Create Button filter on all pages*/
 .button-filter {
 	width: 171px;
+	font-size: 16px;
 }
 
 /* Bold Button filter when hovering */
