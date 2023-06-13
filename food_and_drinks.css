@@ -1,8 +1,16 @@
 /*Sizing top pic on food page*/
-.main_food&drink_photo{
-height: 100px;	
+.food_and_drinks_photo {
+width: 500px;	
+height: 360px;
 } 
 
+/*Wrapping the text line below food photo and drink photo separately*/
 .image-text-wrapper {
 display:flex;
+}
+
+/*Center justify main photo*/
+.food_and_drinks_page_photo_container {
+display:flex;
+justify-content: center;	
 }
