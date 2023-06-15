@@ -61,10 +61,10 @@ overflow-x:visible;
 
 @keyframes main_page_photo_container {
   0% {
-    left: 50%;
+    left: 100%;
   }
   50% {
-    left: -50%;
+    left: -100%;
   }
 }
 
@@ -73,7 +73,7 @@ overflow-x:visible;
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
