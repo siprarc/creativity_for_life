@@ -14,12 +14,20 @@
 		
 		<h2>My Art Gallery</h2>
 <div class="table-container"> 
-		<button class="button-filter">Pencil Art</button>
-    <button class="button-filter">Pastel Art</button>
-    <button class="button-filter">Rangoli Art</button>
-    <button class="button-filter">Acrylic/Oil Paintings</button>
+		<button class="button-filter" onclick="showContent('PencilArt')">Pencil Art</button>
+    <button class="button-filter" onclick="showContent('PastelArt')">Pastel Art</button>
+    <button class="button-filter" onclick="showContent('RangoliArt')">Rangoli Art</button>
+    <button class="button-filter" onclick="showContent('AcrylicOilPaintings')">Acrylic/Oil Paintings</button>
 </div>
-/* Add pictures of my paintings */		
+<p>
+/* Add pictures of my paintings */	
+</p>
+
+  <div id="content"></div>
+  <div id="art_work_comments"></div>
+  
+
+<script src="art_work.js"> </script>
 	</body>
 
 </html>
