@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<form>
+<label for="Not Registered">For First-time Users</label><br>
+  <label for="email">email:</label><br>
+  <input type="text" id="email" name="email"><br>
+  <label for="user_name">User name:</label><br>
+  <input type="text" id="user_name" name="user_name"><br>
+  <label for="password">Password:</label><br>
+  <input type="text" id="password" name="password">
+</form>
+<button id="sign-up">
+	Sign-Up
+</button>	
+<form>
+<label for="Already Registered">For Registered Users</label><br>
+  <label for="user_name">User name:</label><br>
+  <input type="text" id="user_name" name="user_name"><br>
+  <label for="password">Password:</label><br>
+  <input type="text" id="password" name="password">
+</form>
+<button id="sign-in">
+	Sign-In
+</button>
+<body>
+  <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js'
+
+    // Add Firebase products that you want to use
+    import { getAuth } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'
+    import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js'
+
+    
+  </script>
+</body>	
+</body>
+</html>
+
+
+
