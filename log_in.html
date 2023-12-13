@@ -8,7 +8,7 @@
 <body>
 <form>
 <label for="Not Registered">For First-time Users</label><br>
-  <label for="email">email:</label><br>
+  <label for="sign-up-email">email:</label><br>
   <input type="text" id="sign-up-email" name="email"><br>
   <label for="user_name">User name:</label><br>
   <input type="text" id="user_name" name="user_name"><br>
@@ -20,8 +20,8 @@
 </button>	
 <form>
 <label for="Already Registered">For Registered Users</label><br>
-  <label for="user_name">User name:</label><br>
-  <input type="text" id="user_name" name="user_name"><br>
+  <label for="sign-in-email">email:</label><br>
+  <input type="text" id="sign-in-email" name="sign-in-email"><br>
   <label for="password">Password:</label><br>
   <input type="password" id="sign-in-password" name="password">
 </form>
@@ -34,7 +34,7 @@
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js'
 
     // Add Firebase products that you want to use
-    import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'
     import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js'
 
    // Your web app's Firebase configuration
@@ -49,15 +49,16 @@
     measurementId: "G-LSCME9E44X"
   };
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    // Initialize Firebase Authentication and get a reference to the service
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+// Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
+//For Sign-up
 const signUpUser = () => {
-	const emailSignUp = document.getElementById("sign-up-email").value
+const emailSignUp = document.getElementById("sign-up-email").value
 const passwordSignUp = document.getElementById("sign-up-password").value
-	console.log(emailSignUp, passwordSignUp)
+console.log(emailSignUp, passwordSignUp)
 createUserWithEmailAndPassword(auth, emailSignUp, passwordSignUp)
   .then((userCredential) => {
     // Signed up 
@@ -68,12 +69,29 @@ createUserWithEmailAndPassword(auth, emailSignUp, passwordSignUp)
     const errorCode = error.code;
     const errorMessage = error.message;
     console.log(errorMessage)
-    // ..
+  })
+}
+ //For Sign-In
+const signInUser = () => {
+const emailSignIn = document.getElementById("sign-in-email").value
+const passwordSignIn = document.getElementById("sign-in-password").value
+console.log(emailSignIn, passwordSignIn)
+signInWithEmailAndPassword(auth, emailSignIn, passwordSignIn)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log("Success")
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorMessage)
   });	
 }
-//Create Event listner
+//Create Event listner for Sign-up and Sign-in
 document.getElementById("sign-up").addEventListener("click",signUpUser)
-  </script>
+document.getElementById("sign-in").addEventListener("click",signInUser)
+ </script>
 </body>	
 </body>
 </html>
