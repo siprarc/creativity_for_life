@@ -35,12 +35,12 @@
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js'
 
-    // Add Firebase products that you want to use
+  // Add Firebase products that you want to use
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'
     import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js'
 
-   // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
     apiKey: "AIzaSyCpdvnxHWnW3eBH8xyEHuv4zpcekNy84Lw",
     authDomain: "sipra-s-page.firebaseapp.com",
@@ -77,10 +77,10 @@ email,password
 console.log(email, password)
 createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed up 
+  // Signed up 
     const user = userCredential.user;
     console.log("Success")
-    //This is where we make the call for User name
+  //This is where we make the call for User with User name
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -123,6 +123,34 @@ let buttonConfigs = [
 buttonConfigs.forEach(config => document.getElementById(config.id).addEventListener("click",config.func));
 //document.getElementById("sign-up").addEventListener("click",signUpUser)
 //document.getElementById("sign-in").addEventListener("click",signInUser)
+
+//Manager Users who are currently signed-in
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js'
+
+const auth = getAuth(firebaseConfig);
+onAuthStateChanged(auth, (getUserInfo) => {
+  if (getUserInfo) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    const emailId = getUserInfo.emailIid;
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+const auth = getAuth(firebaseConfig);
+const getUserInfo = auth.currentUser;
+
+if (getUserInfo) {
+  // User is signed in, see docs for a list of available properties
+  // https://firebase.google.com/docs/reference/js/auth.user
+  // ...
+} else {
+  // No user is signed in.
+}
+});
+
  </script>
 </body>	
 </body>
