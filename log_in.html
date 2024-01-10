@@ -4,37 +4,42 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+  <link href="log_in.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div class="user_container">
-</div> 
-<form>
-<label for="Not Registered">For First-time Users</label><br>
-  <label for="sign-up-email">email:</label><br>
-  <input type="text" id="sign-up-email" name="email"><br>
-  <label for="user_name">User name:</label><br>
-  <input type="text" id="user_name" name="user_name"><br>
-  <label for="password">Password:</label><br>
-  <input type="password" id="sign-up-password" name="password">
-</form>
-<button id="sign-up">
-	Sign-Up
-</button>	
-<form>
-<label for="Already Registered">For Registered Users</label><br>
-  <label for="sign-in-email">email:</label><br>
-  <input type="text" id="sign-in-email" name="sign-in-email"><br>
-  <label for="password">Password:</label><br>
-  <input type="password" id="sign-in-password" name="password">
-</form>
-<button id="sign-in">
-	Sign-In
-</button>
-<body>
-  <!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+<h2>Log-in to Creativity for Life Page</h2>
+<div class="flex-container">
+<div>
+
+    <form>
+      <label for="Not Registered" class="user-type-header">For First-time Users</label><br>
+        <label for="sign-up-email">email:</label><br>
+        <input type="text" id="sign-up-email" name="email"><br>
+        <label for="user_name">User name:</label><br>
+        <input type="text" id="user_name" name="user_name"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="sign-up-password" name="password">
+      </form>
+      <button id="sign-up">
+        Sign-Up
+      </button>	 
+  </div>
+  <div>
+    <form>
+      <label for="Already Registered" class="user-type-header">For Registered Users</label><br>
+        <label for="sign-in-email">email:</label><br>
+        <input type="text" id="sign-in-email" name="sign-in-email"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="sign-in-password" name="password">
+      </form>
+      <button id="sign-in">
+        Sign-In
+      </button>
+  </div>
+</div>
+<!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
 <script type="module" src="index.js">
- </script>
-</body>	
+ </script>	
 </body>
 </html>
 
