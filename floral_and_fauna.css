@@ -1,0 +1,12 @@
+/*Center justify Various Art buttons*/
+.table-container {
+display:flex;
+justify-content: center;
+font-size: 40px;
+}
+
+/*Center justify main photo*/
+.gardening_page_photo{
+align-items: center;	
+}
+
