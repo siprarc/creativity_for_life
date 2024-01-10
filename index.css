@@ -131,7 +131,7 @@ text-align: center;
 .my_quotes{
   margin: 50;
   width: 640px; 
-  padding: 30px;
+  padding: 0px;
   font-family: sans-serif; 
   color: blue;    
 }
@@ -283,3 +283,4 @@ display:flex;
 justify-content: center;
 font-size: 40px;
 }
+
