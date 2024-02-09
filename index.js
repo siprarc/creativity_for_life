@@ -24,129 +24,98 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 //Need separate function that get info for email, password; Hint: Object destructuring 
 const getUserInfo = (emailId, passwordId,userNameId) => {
-const email = document.getElementById(emailId).value
-const password = document.getElementById(passwordId).value 
+  const email = document.getElementById(emailId).value
+  const password = document.getElementById(passwordId).value 
 let userName 
-if (userNameId) { 
+  if (userNameId) { 
     userName = document.getElementById(userNameId).value  
-}
-return({
-email,
-password,
-userName, 
-}) 
+  }
+  return({
+    email,
+    password,
+    userName, 
+  }) 
 }
 //Need separate function for error handling
 //For Sign-up
 const signUpUser = async() => {
-const {
-email,password,userName  
-} = getUserInfo("sign-up-email","sign-up-password","user_name")
-
-//const emailSignUp = document.getElementById("sign-up-email").value
-//const passwordSignUp = document.getElementById("sign-up-password").value
-console.log(email, password)
+  const {
+    email,password,userName  
+    } = getUserInfo("sign-up-email","sign-up-password","user_name")
+    console.log(email, password)
 //if username is not unique - Give a message to user saying the username exists
-const docRef = doc(db, "usernames",userName);
-const docSnap = await getDoc(docRef);
-
-if (docSnap.exists()) {
+  const docRef = doc(db, "usernames",userName);
+  const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
   //this is the code if the username exists in the db    
-  console.log("Document data:", docSnap.data());
-  alert("Username is already in use")
-} else {
-createUserWithEmailAndPassword(auth, email, password)
-.then((userCredential) => {
+      console.log("Document data:", docSnap.data());
+      alert("Username is already in use")
+    } else {
+      createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
 // Signed up 
-updateProfile(auth.currentUser, {
-displayName: userName, 
-}).then(async() => {
-console.log("Profile Success"
-) 
+        updateProfile(auth.currentUser, {
+        displayName: userName, 
+        })
+        .then(async() => {
+        console.log("Profile Success"
+        ) 
 //Add username collection to firebase 
 // Profile updated!
-await setDoc(doc(db, "usernames",userName), {});
-}).catch((error) => {
-console.log(error)
+        await setDoc(doc(db, "usernames",userName), {});
+      }).catch((error) => {
+          console.log(error)
 // An error occurred
-alert(error.message);
-console.log("Profile already exists in the database");
-});
-  console.log("Success")
+          alert(error.message);
+          console.log("Profile already exists in the database");
+        });
+          console.log("Success")
 //This is where we make the call for User with User name
-})
-.catch((error) => {
-  const errorCode = error.code;
-  const errorMessage = error.message;
-  console.log(errorMessage)
-  alert(errorMessage)
-})
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorMessage)
+          alert(errorMessage)
+        })
   // docSnap.data() will be undefined in this case
-  console.log("No such document!");
-}
+          console.log("No such document!");
+      }
 
-}
+  }
 //For Sign-In
 const signInUser = () => {
-const {
-email,password  
-} = getUserInfo("sign-in-email","sign-in-password")
+  const {
+  email,password  
+  } = getUserInfo("sign-in-email","sign-in-password")
 //const emailSignIn = document.getElementById("sign-in-email").value
 //const passwordSignIn = document.getElementById("sign-in-password").value
-console.log(email, password)
-signInWithEmailAndPassword(auth, email, password)
-.then((userCredential) => {
+  console.log(email, password)
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
   // Signed in 
-  const user = userCredential.user;
-  console.log("Success")
-})
-.catch((error) => {
-  const errorCode = error.code;
-  const errorMessage = error.message;
-  console.log(errorMessage)
-});	
+    const user = userCredential.user;
+    console.log("Success")
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorMessage)
+  });	
 }
 //Create Event listner for Sign-up and Sign-in
 let buttonConfigs = [
-{
-id:"sign-up",
-func:signUpUser,
-},
-{
-id:"sign-in",
-func:signInUser,
-},
+  {
+  id:"sign-up",
+  func:signUpUser,
+  },
+  {
+  id:"sign-in",
+  func:signInUser,
+  },
 ];
 //Using for Each signing functions with a loop
 buttonConfigs.forEach(config => document.getElementById(config.id).addEventListener("click",config.func));
-//document.getElementById("sign-up").addEventListener("click",signUpUser)
-//document.getElementById("sign-in").addEventListener("click",signInUser)
-
-//Manage Users who are currently signed-in
-//import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'
-//import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js'
-
-// const auth = getAuth(firebaseConfig);
-// onAuthStateChanged(auth, (getUserInfo) => {
-//   if (getUserInfo) {
-//     // User is signed in, see docs for a list of available properties
-//     // https://firebase.google.com/docs/reference/js/auth.user
-//     const emailId = getUserInfo.emailIid;
-//     // ...
-//   } else {
-//     // User is signed out
-//     // ...
-//   }
-// const auth = getAuth(firebaseConfig);
-// const getUserInfo = auth.currentUser;
-
-// if (getUserInfo) {
-//   // User is signed in, see docs for a list of available properties
-//   // https://firebase.google.com/docs/reference/js/auth.user
-//   // ...
-// } else {
-//   // No user is signed in.
-// }
-// });
+  
 
 
