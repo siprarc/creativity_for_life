@@ -1,0 +1,14 @@
+.user-type-header {
+font-size: 20px;
+font-weight: bold;
+}
+
+
+.flex-container {
+    display:flex;
+    justify-content: space-around;
+    font-size: 16px;
+    }
+input {
+    margin-bottom: 15px;
+}
