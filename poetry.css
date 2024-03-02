@@ -1,4 +1,4 @@
-/*Center justify Various Art buttons*/
+/*Center justify Various poetry buttons*/
 .table-container {
 display:flex;
 justify-content: center;
@@ -6,7 +6,13 @@ font-size: 40px;
 }
 
 /*Center justify main photo*/
-.gardening_page_photo{
-align-items: center;	
+.poetry_page_photo_container{
+justify-content: center;
+display:flex;	
 }
+
+.poetry_blog_content_container {
+    display:flex;
+    justify-content: left;	
+    }
 

@@ -12,3 +12,33 @@ font-weight: bold;
 input {
     margin-bottom: 15px;
 }
+/*Create Button filter*/
+.button-filter {
+	width: 171px;
+	font-size: 16px;
+}
+/* Bold Button filter when hovering on items*/
+.button-filter:hover {
+	font-weight: bold;
+}
+/*Photo size*/
+.photo_container {
+  display: flex;
+  overflow: auto;
+  user-select: none;
+  gap: var(--gap);
+  mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 10%,
+    hsl(0 0% 0% / 1) 10%,
+    hsl(0 0% 0% / 0)
+  );
+}
+.photo_container_group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 10%;
+}
