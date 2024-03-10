@@ -19,7 +19,7 @@ console.log('poetry')
 
 //Loop through an array of object//
 const poetryCommentDiv = document.getElementById('poetry_comments')
-const artWorkComments = [comment1,comment2,comment3]
+const poetryComments = [comment1,comment2,comment3]
 console.log(poetryComments)
 poetryComments.forEach(poetryComment => {
    console.log(poetryComment) 
@@ -44,12 +44,10 @@ poetryComments.forEach(poetryComment => {
    topCommentSection.appendChild(user_idContainer)
    topCommentSection.appendChild(dateContainer)
 //Put new div syntax into "poetryCommentDiv"
-   artWorkCommentDiv.appendChild(topCommentSection)
+   poetryCommentDiv.appendChild(topCommentSection)
 
 // adds each element to poetrycommentdiv
-//artWorkCommentDiv.appendChild(user_idContainer)
-//artWorkCommentDiv.appendChild(dateContainer)
-   artWorkCommentDiv.appendChild(commentContainer)
+   poetryommentDiv.appendChild(commentContainer)
    
 })
 
