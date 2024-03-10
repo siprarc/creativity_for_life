@@ -14,8 +14,8 @@ input {
 }
 /*Create Button filter*/
 .button-filter {
-	width: 171px;
-	font-size: 16px;
+	width: 180px;
+	font-size: 20px;
 }
 /* Bold Button filter when hovering on items*/
 .button-filter:hover {
