@@ -1,16 +1,16 @@
 //Show Content from Art work 
 const contentForArtWork = {
-    PencilArt: '<p>content for Pencil Art</p>',
-    PastelArt: '<p>content for Pastel Art</p>',
-    RangoliArt: '<p>content for Rangoli Art</p>',
-    AcrylicOilPaintings: '<p>content for Acrylic/Oil Paintings</p>',
+    PencilArt: '<p>Blog for Pencil Art</p>',
+    PastelArt: '<p>Blog for Pastel Art</p>',
+    RangoliArt: '<p>Blog for Rangoli Art</p>',
+    AcrylicOilPaintings: '<p>Blog for Acrylic/Oil Paintings</p>',
 }
 //Show Content from Poetry 
 const contentForPoetry = {
-    Nature: '<p>content for Nature</p>',
-    myKitchen: '<p>content for My Kitchen</p>',
-    artThatSpeaks: '<p>content for Art that speaks</p>',
-    LifeAndCelebrations: '<p>content for Life and Celebrations</p>',
+    Nature: '<p>Blog for Nature Poetry</p>',
+    myKitchen: '<p>Blog for My Kitchen poetry</p>',
+    artThatSpeaks: '<p>Blog for Art that speaks Poetry</p>',
+    LifeAndCelebrations: '<p>Blog for Life and Celebrations Poetry</p>',
 }
 const showContent = (type, category) => {
     let contentObj={}
