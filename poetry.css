@@ -16,14 +16,18 @@ display:flex;
     width: 50px;
   }
 
-.poetry_blog_content_container1 {
+.poetry_blog_photo_container1 {
 display:flex;
 justify-content: left;	
 }
+.poetry_blog_text_container1 {
+    display:flex;
+    justify-content: right;	
+    }
 
 /*Scroll photos on Poetry  Blog1*/
-.poetry_blog_photo_container {
-	display: flex;
+.poetry_blog_photo_container1 {
+  display: flex;
   overflow: auto;
   user-select: none;
   gap: var(--gap);
@@ -61,3 +65,10 @@ justify-content: left;
     transform: translateX(-100%);
   }
 }
+.table-containers {
+    display: unset;
+  }
+  .blogContent {
+      display: none
+  }
+  
