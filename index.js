@@ -2,7 +2,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebas
 
 // Add Firebase products that you want to use
   import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'
-  import { getFirestore, doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js'
+  import { getFirestore, doc, getDoc, getDocs, collection, setDoc,addDoc, query, where } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js'
  
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -116,6 +116,19 @@ let buttonConfigs = [
 ];
 //Using for Each signing functions with a loop
 buttonConfigs.forEach(config => document.getElementById(config.id).addEventListener("click",config.func));
-  
+//Get all blogs in a collection
+const getDocsFromCollection = async (collectionName) => { 
+  const documents = []
+const querySnapshot = await getDocs(collection(db, collectionName));
+querySnapshot.forEach((doc) => {
+  documents.push(doc.data())
+})
+return documents
+};
+const getBlog1Comments = async () => {
+  const comments = await getDocsFromCollection('blog_1_comments')
+  return comments
+}
 
-
+const comments = await getBlog1Comments()
+console.log(comments)
