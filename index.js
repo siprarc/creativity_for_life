@@ -126,11 +126,11 @@ querySnapshot.forEach((doc) => {
 })
 return documents
 };
-const getBlog1Comments = async () => {
+const getBlog2Comments = async () => {
 const comments = await getDocsFromCollection('blog_1_comments')
 
 return comments
 }
 
-const comments = await getBlog1Comments()
+const comments = await getBlog2Comments()
 console.log(comments)
