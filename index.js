@@ -119,15 +119,17 @@ buttonConfigs.forEach(config => document.getElementById(config.id).addEventListe
 //Get all blogs in a collection
 const getDocsFromCollection = async (collectionName) => { 
   const documents = []
-const querySnapshot = await getDocs(collection(db, collectionName));
+const q = query (collection(db, "blog_1_comments"),  where ("blog_id","==", "blog_2_comment"));
+const querySnapshot = await getDocs(q);
 querySnapshot.forEach((doc) => {
   documents.push(doc.data())
 })
 return documents
 };
 const getBlog1Comments = async () => {
-  const comments = await getDocsFromCollection('blog_1_comments')
-  return comments
+const comments = await getDocsFromCollection('blog_1_comments')
+
+return comments
 }
 
 const comments = await getBlog1Comments()
