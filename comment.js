@@ -28,3 +28,20 @@ function myFunction() {
     const formattedDate =  date.toISOString()
     console.log (elemt, formattedDate)
 }
+
+
+function addFormToScreen(documentId) {
+    const element = document.getElementById("comment_form")
+    element.innerHTML=`
+    <div>
+        <button>
+            User Comments
+        </button>   
+    <form>
+        <label for="user_comment">Comment:</label><br>
+        <textarea id="user_comment" rows="4" cols="50"></textarea>
+        <button onclick="myFunction()">Submit</button>  
+      </form>
+    </div>
+    `
+}
