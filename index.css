@@ -8,7 +8,7 @@ body {
 margin: 50px;
 }
 table {
-border-collapse: collapse:
+border-collapse: collapse;
 }
 
 /* Change font color and size for h1 */
@@ -283,4 +283,7 @@ display:flex;
 justify-content: center;
 font-size: 40px;
 }
-
+/*Size all content Images*/
+.content-images {
+  width: 250px;
+}

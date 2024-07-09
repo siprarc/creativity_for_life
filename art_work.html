@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html>
-	<head>
+<head>
 		<link href="index.css" rel="stylesheet" type="text/css" />
 		<link href="art_work.css" rel="stylesheet" type="text/css" />
-	</head>
-	<body>
-		<h1>Arts and Crafts</h1>
-		<p>"You are the artist of your own life. Don't hand the paintbrush to anyone else. Rather pour your heart and prepare your dream with brush....."</p>
-	<div class="art_page_photo_container">
+</head>
+<body>
+	<h1>Arts and Crafts</h1>
+	<p>"You are the artist of your own life. Don't hand the paintbrush to anyone else. Rather pour your heart and prepare your dream with brush....."</p>
+<div class="art_page_photo_container">
 		<img src="images\art_work1.jpg">
-	</div>
-		<p>I always want my brushes to be full of paints and my mind full of imaginations. Sometimes it seems to me that life is formless and blurry, especially when I lose my focus amidst the chaotic busyness of life. Art is one thing that has given me satisfaction - it is like meditation and nourishment of mind. Art allows me to discover and preserve my delighted mind.</p>
+</div>
+	<p>I always want my brushes to be full of paints and my mind full of imaginations. Sometimes it seems to me that life is formless and blurry, especially when I lose my focus amidst the chaotic busyness of life. Art is one thing that has given me satisfaction - it is like meditation and nourishment of mind. Art allows me to discover and preserve my delighted mind.</p>
 		
-		<h2>My Art Gallery</h2>
+	<h2>My Art Gallery</h2>
 <div class="table-container"> 
-		<button class="button-filter" onclick="showContent('PencilArt')">Pencil Art</button>
-    <button class="button-filter" onclick="showContent('PastelArt')">Pastel Art</button>
-    <button class="button-filter" onclick="showContent('RangoliArt')">Rangoli Art</button>
-    <button class="button-filter" onclick="showContent('AcrylicOilPaintings')">Acrylic/Oil Paintings</button>
+	<button class="button-filter" onclick="showContent('PencilArt','art')">Pencil Art</button>
+    <button class="button-filter" onclick="showContent('PastelArt', 'art')">Pastel Art</button>
+    <button class="button-filter" onclick="showContent('RangoliArt', 'art')">Rangoli Art</button>
+    <button class="button-filter" onclick="showContent('AcrylicOilPaintings', 'art')">Acrylic/Oil Paintings</button>
 </div>
 <p>
 /* Add pictures of my paintings */	
 </p>
 
-  <div id="content"></div>
-  <div id="art_work_comments"></div>
+<div id="content"></div>
+<div id="art_work_comments"></div>
   
 
 <script src="art_work.js"> </script>
-	</body>
+<script src="content.js"> </script>
+</body>
 
 </html>

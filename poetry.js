@@ -20,6 +20,7 @@ console.log('poetry')
 //Loop through an array of object//
 const poetryCommentDiv = document.getElementById('poetry_comments')
 const poetryComments = [comment1,comment2,comment3]
+//Line 22 will be deleted and will be pulledd from Firebase
 console.log(poetryComments)
 poetryComments.forEach(poetryComment => {
    console.log(poetryComment) 
@@ -47,7 +48,7 @@ poetryComments.forEach(poetryComment => {
    poetryCommentDiv.appendChild(topCommentSection)
 
 // adds each element to poetrycommentdiv
-   poetryommentDiv.appendChild(commentContainer)
+   poetryCommentDiv.appendChild(commentContainer)
    
 })
 

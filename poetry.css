@@ -12,21 +12,22 @@ display:flex;
 }
 
 /*Size all blog photo Images*/
-.content-images {
-    width: 50px;
-  }
+/*.content-images {
+    height: 200px;
+  }*/
 
-.poetry_blog_photo_container1 {
+.poetry_blog_photo_container {
 display:flex;
 justify-content: left;	
+height: 200px;
 }
-.poetry_blog_text_container1 {
+.poetry_blog_text_container {
     display:flex;
     justify-content: right;	
     }
 
 /*Scroll photos on Poetry  Blog1*/
-.poetry_blog_photo_container1 {
+.poetry_blog_photo_container {
   display: flex;
   overflow: auto;
   user-select: none;

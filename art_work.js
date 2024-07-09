@@ -39,37 +39,27 @@ artWorkComments.forEach(artWorkComment => {
    const dateContainer = document.createElement('p')
    const commentContainer = document.createElement('p')
 
-   // add text to each element
+// add text to each element
    user_idContainer.innerHTML = artWorkComment.user_id
    dateContainer.innerHTML = artWorkComment.date
    commentContainer.innerHTML = artWorkComment.comment
    
-   //Create div syntax for 'username' and 'date'
+//Create div syntax for 'username' and 'date'
    const topCommentSection = document.createElement('div')
    
-   //Add class to new div syntax
+//Add class to new div syntax
    topCommentSection.setAttribute("class","topCommentSection")
 
-   //Put Username and date in new div syntax
+//Put Username and date in new div syntax
    topCommentSection.appendChild(user_idContainer)
    topCommentSection.appendChild(dateContainer)
-   //Put new div syntax into "artWorkCommentDiv"
+//Put new div syntax into "artWorkCommentDiv"
    artWorkCommentDiv.appendChild(topCommentSection)
 
-   // adds each element to artworkcommentdiv
-   //artWorkCommentDiv.appendChild(user_idContainer)
-   //artWorkCommentDiv.appendChild(dateContainer)
+// adds each element to artworkcommentdiv
+//artWorkCommentDiv.appendChild(user_idContainer)
+//artWorkCommentDiv.appendChild(dateContainer)
    artWorkCommentDiv.appendChild(commentContainer)
    
 })
 
-//Show Content from Art work 
-const contentForArtWork = {
-    PencilArt: '<p>content for Pencil Art</p>',
-    PastelArt: '<p>content for Pastel Art</p>',
-    RangoliArt: '<p>content for Rangoli Art</p>',
-    AcrylicOilPaintings: '<p>content for Acrylic/Oil Paintings</p>',
-}
-const showContent = (type) => {
-document.getElementById('content').innerHTML = contentForArtWork[type]
-}

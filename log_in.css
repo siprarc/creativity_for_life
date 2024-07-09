@@ -1,15 +1,9 @@
-div {
-
-}
 .user-type-header {
 font-size: 20px;
 font-weight: bold;
 }
-#id-name {
 
-}
-
-/*left justify First-time user on log-in page*/
+/*justify First-time user on log-in page*/
 .flex-container {
     display:flex;
     justify-content: space-around;
