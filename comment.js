@@ -29,19 +29,36 @@ function myFunction() {
     console.log (elemt, formattedDate)
 }
 
+const name = 'Sipra'
 
+console.log('hi ' + name)
+console.log(`hi ${name}`)
 function addFormToScreen(documentId) {
-    const element = document.getElementById("comment_form")
-    element.innerHTML=`
+    //Get all of the elements that have class "Comment form"//
+    //Loop over each element of the Comment form//
+    //Add form to each element//
+    //Add submit button to multiple page and multiple blog//
+    const elements = document.getElementsByClassName("comment_form")
+    if(elements.length>0){
+        Array.from(elements).forEach(function (element){
+        const blogId = element.dataset.blogid
+        const submitId = `Submit-${blogId}`
+        console.log (blogId)   
+        element.innerHTML=`
     <div>
-        <button>
+        <button class="userComment-container">
             User Comments
         </button>   
     <form>
         <label for="user_comment">Comment:</label><br>
-        <textarea id="user_comment" rows="4" cols="50"></textarea>
-        <button onclick="myFunction()">Submit</button>  
+        <textarea id="user_comment_${blogId}" rows="4" cols="50"></textarea>
+        <button id="${submitId}" onclick="myFunction()">Submit</button> 
       </form>
     </div>
     `
+        })
+    }
+
+
+    
 }

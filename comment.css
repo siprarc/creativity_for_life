@@ -1,0 +1,16 @@
+/*--<<Style User Comment>>--*/
+.userComment-container {
+display:flex;
+justify-content: left;
+justify-content: space-around;
+font-size: 16px;
+}
+/*--<<Move Submit button to left side>>--*/
+.submit-container {
+display:flex;
+justify-content: left;
+justify-content: space-around;
+font-size: 16px;
+<button onclick=.submit-container> teal </button>
+<button onclick=.submit-container>right-align </button>
+}
