@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js'
 
 // Add Firebase products that you want to use
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile} from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, setPersistence, browserLocalPersistence} from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'
   import { getFirestore, doc, getDoc, getDocs, collection, setDoc,addDoc, query, where } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js'
  
 // Your web app's Firebase configuration
@@ -90,12 +90,13 @@ const signInUser = () => {
   } = getUserInfo("sign-in-email","sign-in-password")
 //const emailSignIn = document.getElementById("sign-in-email").value
 //const passwordSignIn = document.getElementById("sign-in-password").value
-  console.log(email, password)
-  signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
+  console.log(email)
+  setPersistence(auth,browserLocalPersistence)
+  .then(() => {
   // Signed in 
-    const user = userCredential.user;
+    
     console.log("Success")
+    return signInWithEmailAndPassword(auth, email, password)
   })
   .catch((error) => {
     const errorCode = error.code;

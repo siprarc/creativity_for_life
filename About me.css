@@ -1,0 +1,11 @@
+/*Center justify main photo*/
+.about_me_photo_container {
+display:flex;
+justify-content: center;	
+}
+
+/*Justify the topSectionComment*/
+.topCommentSection{
+	display: flex;
+	justify-content: space-between;
+}
