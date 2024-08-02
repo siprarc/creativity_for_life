@@ -22,8 +22,8 @@
 // let user_comment = prompt('user_comment');
 // console.log('user_comment')
 
-function myFunction() {
-    const elemt = document.getElementById("user_comment").value;
+function myFunction(blogId) {
+    const elemt = document.getElementById(`user_comment_${blogId}`).value;
     const date = new Date();
     const formattedDate =  date.toISOString()
     console.log (elemt, formattedDate)
@@ -52,10 +52,14 @@ function addFormToScreen(documentId) {
     <form>
         <label for="user_comment">Comment:</label><br>
         <textarea id="user_comment_${blogId}" rows="4" cols="50"></textarea>
-        <button id="${submitId}" onclick="myFunction()">Submit</button> 
+        <button id="${submitId}" >Submit</button> 
       </form>
     </div>
     `
+    const submitButton = document.getElementById(submitId)
+    submitButton.addEventListener("click", function () {
+      myFunction(blogId)  
+    })
         })
     }
 
