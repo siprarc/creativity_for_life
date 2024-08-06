@@ -23,6 +23,16 @@ input {
 }
 /*Photo size*/
 .photo_container {
+  position: cerelative;
+  width: 40px;
+  height: 30px;  
+}
+img {
+  max-width: 8%;
+  height: auto;
+}
+/*Photo size*/
+/*.photo_container {
   display: flex;
   overflow: auto;
   user-select: none;
@@ -34,11 +44,11 @@ input {
     hsl(0 0% 0% / 1) 10%,
     hsl(0 0% 0% / 0)
   );
-}
-.photo_container_group {
+}*/
+/*.photo_container_group {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
   min-width: 10%;
-}
+}*/
