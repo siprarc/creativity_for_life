@@ -17,16 +17,48 @@
 // let user = prompt('user_name');
 // console.log('user_name')
 
-
-
 // let user_comment = prompt('user_comment');
 // console.log('user_comment')
+
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js'
+// Add Firebase products that you want to use
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js';
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: "AIzaSyCpdvnxHWnW3eBH8xyEHuv4zpcekNy84Lw",
+    authDomain: "sipra-s-page.firebaseapp.com",
+    projectId: "sipra-s-page",
+    storageBucket: "sipra-s-page.appspot.com",
+    messagingSenderId: "639310346557",
+    appId: "1:639310346557:web:a22a5d48cba0e8e848ad54",
+    measurementId: "G-LSCME9E44X"
+  };
+  
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+let firebaseUser= {}
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    const uid = user.uid;
+    if (user !== firebaseUser){
+        firebaseUser = user
+    }
+    // ...
+  } else {
+    // User is signed out
+    // ...
+  }
+});
 
 function myFunction(blogId) {
     const elemt = document.getElementById(`user_comment_${blogId}`).value;
     const date = new Date();
     const formattedDate =  date.toISOString()
-    console.log (elemt, formattedDate)
+    console.log (elemt, formattedDate,firebaseUser.displayName)
 }
 
 const name = 'Sipra'
@@ -62,7 +94,6 @@ function addFormToScreen(documentId) {
     })
         })
     }
-
-
     
 }
+addFormToScreen()
