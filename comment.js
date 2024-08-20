@@ -21,6 +21,7 @@
 // console.log('user_comment')
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js'
+import { getFirestore, doc, getDoc, getDocs, collection, setDoc,addDoc, query, where } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js'
 // Add Firebase products that you want to use
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js';
 // Your web app's Firebase configuration
@@ -36,8 +37,9 @@ const firebaseConfig = {
   };
   
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const db = getFirestore(app);
 let firebaseUser= {}
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -54,11 +56,17 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-function myFunction(blogId) {
+async function myFunction(blogId) {
     const elemt = document.getElementById(`user_comment_${blogId}`).value;
     const date = new Date();
     const formattedDate =  date.toISOString()
-    console.log (elemt, formattedDate,firebaseUser.displayName)
+    console.log (elemt, formattedDate,firebaseUser.displayName) 
+    // Add a new document in collection "comment"
+    await addDoc(collection(db, `comments_${blogId}`), {
+    userName: firebaseUser.displayName,
+    date: formattedDate,
+    comment: elemt,
+    });
 }
 
 const name = 'Sipra'
@@ -77,6 +85,7 @@ function addFormToScreen(documentId) {
         const submitId = `Submit-${blogId}`
         console.log (blogId)   
         element.innerHTML=`
+
     <div>
         <button class="userComment-container">
             User Comments
