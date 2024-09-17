@@ -93,7 +93,7 @@ function addFormToScreen(documentId) {
     <form>
         <label for="user_comment">Comment:</label><br>
         <textarea id="user_comment_${blogId}" rows="4" cols="50"></textarea>
-        <button id="${submitId}" >Submit</button> 
+        <button id="${submitId}" class="submit-container" >Submit</button> 
       </form>
     </div>
     `
