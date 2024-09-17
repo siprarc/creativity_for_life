@@ -95,7 +95,7 @@ const signInUser = () => {
   .then(() => {
   // Signed in 
     
-    console.log("Success")
+    //console.log("Success")
     return signInWithEmailAndPassword(auth, email, password)
   })
   .catch((error) => {

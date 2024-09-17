@@ -98,7 +98,8 @@ function addFormToScreen(documentId) {
     </div>
     `
     const submitButton = document.getElementById(submitId)
-    submitButton.addEventListener("click", function () {
+    submitButton.addEventListener("click", function (event) {
+      event.preventDefault()
       myFunction(blogId)  
     })
         })
