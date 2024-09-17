@@ -28,7 +28,8 @@ input {
   height: 30px;  
 }
 img {
-  max-width: 8%;
+  /* max-width is not the css property you need you here */
+  width: 30px;
   height: auto;
 }
 /*Photo size*/
