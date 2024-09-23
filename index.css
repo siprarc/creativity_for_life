@@ -287,3 +287,30 @@ font-size: 40px;
 .content-images {
   width: 250px;
 }
+
+.flex-container {
+  display:flex;
+  justify-content: space-around;
+  font-size: 16px;
+  }
+input {
+  margin-bottom: 15px;
+}
+/*Create Button filter*/
+.button-filter {
+width: 180px;
+font-size: 20px;
+}
+/* Bold Button filter when hovering on items*/
+.button-filter:hover {
+font-weight: bold;
+}
+/*Contact Photo size*/
+.contact_icon{
+width: 30px;
+height: auto;
+}
+
+.contact_image {
+text-decoration:none;
+}
