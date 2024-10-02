@@ -176,6 +176,22 @@ margin-left: 10%;
 	left: 400px;
 	background-color: antiquewhite;
 }
+.box6 {
+	top: 400px;
+	left: 100px;
+	background-color: black;
+}
+/*Add thin boader*/
+.lower-boarder{
+  background-color: black;
+  height: 10px;
+	/* border-style: solid;
+	border-color: black;
+  background-color: black;
+	border-width: 1px; */
+}
+
+
 /*Create tag-line */
 .tag-line {
 	font-weight: bold;
@@ -305,6 +321,7 @@ font-size: 20px;
 .button-filter:hover {
 font-weight: bold;
 }
+
 /*Contact Photo size*/
 .contact_icon{
 width: 30px;
@@ -313,4 +330,9 @@ height: auto;
 
 .contact_image {
 text-decoration:none;
+}
+
+/*Bullet container for my write-up*/
+.bullet_container{
+  display: flex; 
 }
