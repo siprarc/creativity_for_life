@@ -73,7 +73,7 @@ const name = 'Sipra'
 
 console.log('hi ' + name)
 console.log(`hi ${name}`)
-function addFormToScreen(documentId) {
+function addFormToScreen() {
     //Get all of the elements that have class "Comment form"//
     //Loop over each element of the Comment form//
     //Add form to each element//
@@ -97,6 +97,7 @@ function addFormToScreen(documentId) {
       </form>
     </div>
     `
+    //Create event listner for the Submit Button//
     const submitButton = document.getElementById(submitId)
     submitButton.addEventListener("click", function (event) {
       event.preventDefault()
@@ -107,3 +108,4 @@ function addFormToScreen(documentId) {
     
 }
 addFormToScreen()
+//Add comments of users to show on the blog post//

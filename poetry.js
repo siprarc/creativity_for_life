@@ -1,3 +1,14 @@
+// notes from bianca
+// Now we need to move the logic we have here into comment.js so that we can display comments from any post
+// to do that. comment.js will need to grab a blog id from a div in the html (just like in comment.html)
+// then it will need to create elements for the comments(already done here)
+// and add them to the page (also done here)
+// we need to make this reusuable so that it will work with any blog post or content
+// Basically, anywhere you are using a poetry-specific string, you need to make this reusueable
+
+//notes from bianca again
+// do we need to move all of the firebase imports? Does comment.js already have some of this?
+
 import { collection, getDocs, getFirestore } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js'
 const firebaseConfig = {
@@ -13,32 +24,15 @@ const app = initializeApp(firebaseConfig);
 //const auth = getAuth();
 const db = getFirestore(app);
 
-
-const comment1 = {
-    userName: 'Siprarc',
-    date: '8/8/2023',
-    comment: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
-}
-const comment2 = {
-   userName: 'Bianca',
-    date: '8/8/2023',
-    comment: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
-}
-const comment3 = {
-   userName: 'Anshurp',
-    date: '8/8/2023',
-    comment: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
-}
-console.log('poetry')
-
 // next steps (written by bianca)
 // import everything you need from firebase
 // use comment.js as a guide for what you need
 
 //Loop through an array of object//
-const poetryCommentDiv = document.getElementById('poetry_comments')
-//const poetryComments = [comment1,comment2,comment3]
-//Line 22 will be deleted and will be pulledd from Firebase
+// notes from bianca
+// this is how we get the element that we are adding the comments to. This should be resusualbe
+// cannot use id for this. You need to use classnames (just like in comment.js)
+const poetryCommentDiv = document.getElementById('poetry_comments') 
 const poetryComments = []
 
 
