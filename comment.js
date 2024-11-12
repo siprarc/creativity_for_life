@@ -108,45 +108,49 @@ function addFormToScreen() {
     
 }
 async function showCommentToScreen() {
-  const commentDiv = document.getElementById('poetry_comments') 
-  const comments = []
+  const elements = document.getElementsByClassName("blog_comments")
+  if(elements.length>0){
+    Array.from(elements).forEach(async function (element){
+    const blogId = element.dataset.blogid
+    const comments = []
   
-  const querySnapshot = await getDocs(collection(db, "comments_blog1"));
-  querySnapshot.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-     console.log(doc.id, " => ", doc.data());
-     comments.push(doc.data())
-  });
-  
-  comments.forEach(comment => {
-     console.log(comment)   
-  //Create element for each comment
-     const user_idContainer = document.createElement('p')
-     const dateContainer = document.createElement('p')
-     const commentContainer = document.createElement('p')
-  
-  // add text to each element
-     user_idContainer.innerHTML = comment.userName
-     dateContainer.innerHTML = comment.date
-     commentContainer.innerHTML = comment.comment
-     
-  //Create div syntax for 'username' and 'date'
-     const topCommentSection = document.createElement('div')
-     
-  //Add class to new div syntax
-     topCommentSection.setAttribute("class","topCommentSection")
-  
-  //Put Username and date in new div syntax
-     topCommentSection.appendChild(user_idContainer)
-     topCommentSection.appendChild(dateContainer)
-  //Put new div syntax into "poetryCommentDiv"
-     commentDiv.appendChild(topCommentSection)
-  
-  // adds each element to poetrycommentdiv
-     commentDiv.appendChild(commentContainer)
-     
-  })
-
+    const querySnapshot = await getDocs(collection(db, blogId));
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+       console.log(doc.id, " => ", doc.data());
+       comments.push(doc.data())
+    });
+    
+    comments.forEach(comment => {
+       console.log(comment)   
+    //Create element for each comment
+       const user_idContainer = document.createElement('p')
+       const dateContainer = document.createElement('p')
+       const commentContainer = document.createElement('p')
+    
+    // add text to each element
+       user_idContainer.innerHTML = comment.userName
+       dateContainer.innerHTML = comment.date
+       commentContainer.innerHTML = comment.comment
+       
+    //Create div syntax for 'username' and 'date'
+       const topCommentSection = document.createElement('div')
+       
+    //Add class to new div syntax
+       topCommentSection.setAttribute("class","topCommentSection")
+    
+    //Put Username and date in new div syntax
+       topCommentSection.appendChild(user_idContainer)
+       topCommentSection.appendChild(dateContainer)
+    //Put new div syntax into "poetryCommentDiv"
+      element.appendChild(topCommentSection)
+    
+    // adds each element to poetrycommentdiv
+       element.appendChild(commentContainer)
+       
+    })
+    })
+    }
 
 }
 
