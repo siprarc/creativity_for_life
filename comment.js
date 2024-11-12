@@ -107,5 +107,49 @@ function addFormToScreen() {
     }
     
 }
+async function showCommentToScreen() {
+  const poetryCommentDiv = document.getElementById('poetry_comments') 
+  const poetryComments = []
+  
+  const querySnapshot = await getDocs(collection(db, "comments_blog1"));
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+     console.log(doc.id, " => ", doc.data());
+     poetryComments.push(doc.data())
+  });
+  
+  poetryComments.forEach(poetryComment => {
+     console.log(poetryComment)   
+  //Create element for each comment
+     const user_idContainer = document.createElement('p')
+     const dateContainer = document.createElement('p')
+     const commentContainer = document.createElement('p')
+  
+  // add text to each element
+     user_idContainer.innerHTML = poetryComment.userName
+     dateContainer.innerHTML = poetryComment.date
+     commentContainer.innerHTML = poetryComment.comment
+     
+  //Create div syntax for 'username' and 'date'
+     const topCommentSection = document.createElement('div')
+     
+  //Add class to new div syntax
+     topCommentSection.setAttribute("class","topCommentSection")
+  
+  //Put Username and date in new div syntax
+     topCommentSection.appendChild(user_idContainer)
+     topCommentSection.appendChild(dateContainer)
+  //Put new div syntax into "poetryCommentDiv"
+     poetryCommentDiv.appendChild(topCommentSection)
+  
+  // adds each element to poetrycommentdiv
+     poetryCommentDiv.appendChild(commentContainer)
+     
+  })
+
+
+}
+
 addFormToScreen()
 //Add comments of users to show on the blog post//
+showCommentToScreen()
