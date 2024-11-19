@@ -1,0 +1,67 @@
+/// --------- Section 1: Answer the following ---------
+// 1.) What is a function and why are they useful
+// 2.) What is a parameter?
+// 3.) What is an argument? How is it different from a parameter?
+// 4.) What is calling a function and how do you do it?
+/// --------- End Section 1 ---------
+
+/// --------- Section 2: Complete the following challenges ---------
+// 1.) write a function that prints 'hello world' in the console
+function greet(){
+    console.log("Hello"+"world"+"!");
+}
+
+// 2.) call the function from question 1
+greet();
+
+// 3.) write a function that takes a name as a parameter and prints the name in the console
+function greet(name) {
+    console.log("Hello," + name + "!");
+}
+greet(“Sipra”);
+
+// 4.) call the function from question 3 with 'Simone' as the argument for the name
+greet(“Simone”);
+
+// 5.) Update the function in question 3 to print 'Hello ____' where the blank is the name passed to the function
+
+
+
+
+// 6.) Write a function that takes an array of objects as an argument and prints the name value for each object
+// create a loop over each of the objects in the array
+// get the name value from the object
+// print value
+function processArrayOfObject(array){
+    console.log(obj);
+function processArrayOfObject(array){
+    console.log(obj);
+
+
+// 7.) Call the function in question 6 with the following array:
+const dinosaurs = [
+    dinosaur,
+    {
+        name: 'ouranosaurus',
+        nameMeaning: 'orange dinosaur'
+    },
+    {
+        name: 'dracopelta',
+        nameMeaning: 'Dragon shield'
+    }
+]
+// 8.) Call the function from question 6 with the following array:
+const countries = [
+    {
+        name: 'Portugal',
+        continent: 'Europe',
+    },
+    {
+        name: 'Zimbabwe',
+        continent: 'Africa'
+    }
+]
+// 9.) Create a function that loops over an array of objects and adds a 'firstLetter' key where the value is the
+//     first letter of the name
+// 10.) Test the function with the dinosaurs and country arrays
+/// --------- End Section 2 ---------
