@@ -201,14 +201,14 @@ margin-left: 10%;
 }
 
 /*Create horizontal nav bar*/
-ul {
+/* ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 li {
   float: right;
-}
+} */
 /*a {
   display: block;
   padding: 8px;
