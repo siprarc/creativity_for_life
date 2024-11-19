@@ -17,6 +17,15 @@ h1 {
 	color: black;
 }
 
+/*text container for body */
+/*Bullet container for my write-up*/
+.text_bullet_container {
+  display: flex;
+  justify-content: space-around;
+}
+  
+
+
 /* Change picture size */
 img {
   width: 500px;
@@ -34,9 +43,6 @@ height: 400px;
 } 
 
 /*Scroll photos on main page*/
-/*.main_page_photo_container{
-overflow-x:visible;	
-}*/
 .main_page_photo_container {
 	display: flex;
   overflow: auto;
@@ -185,10 +191,6 @@ margin-left: 10%;
 .lower-boarder{
   background-color: black;
   height: 10px;
-	/* border-style: solid;
-	border-color: black;
-  background-color: black;
-	border-width: 1px; */
 }
 
 
@@ -332,7 +334,4 @@ height: auto;
 text-decoration:none;
 }
 
-/*Bullet container for my write-up*/
-.bullet_container{
-  display: flex; 
-}
+
