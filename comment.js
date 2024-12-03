@@ -1,24 +1,3 @@
-// console.log(comment.toString());
-
-// function myFunction() {
-//   document.getElementById("user_comment").value
-// }
-// const biancaObject = {
-//     firstName: 'bianca',
-//     lastName: 'dennis',
-// }
-// console.log(biancaObject.lastName)
-
-// let user ="Sipra"
-//     user = "Bianca"
-//     user = "Anshu"
-// console.log(user);
-
-// let user = prompt('user_name');
-// console.log('user_name')
-
-// let user_comment = prompt('user_comment');
-// console.log('user_comment')
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js'
 import { getFirestore, doc, getDoc, getDocs, collection, setDoc,addDoc, query, where } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js'
@@ -27,16 +6,16 @@ import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyCpdvnxHWnW3eBH8xyEHuv4zpcekNy84Lw",
-    authDomain: "sipra-s-page.firebaseapp.com",
-    projectId: "sipra-s-page",
-    storageBucket: "sipra-s-page.appspot.com",
-    messagingSenderId: "639310346557",
-    appId: "1:639310346557:web:a22a5d48cba0e8e848ad54",
-    measurementId: "G-LSCME9E44X"
+  apiKey: "AIzaSyCpdvnxHWnW3eBH8xyEHuv4zpcekNy84Lw",
+  authDomain: "sipra-s-page.firebaseapp.com",
+  projectId: "sipra-s-page",
+  storageBucket: "sipra-s-page.appspot.com",
+  messagingSenderId: "639310346557",
+  appId: "1:639310346557:web:a22a5d48cba0e8e848ad54",
+  measurementId: "G-LSCME9E44X"
   };
   
-  // Initialize Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
@@ -57,16 +36,16 @@ onAuthStateChanged(auth, (user) => {
 });
 
 async function myFunction(blogId) {
-    const elemt = document.getElementById(`user_comment_${blogId}`).value;
-    const date = new Date();
-    const formattedDate =  date.toISOString()
-    console.log (elemt, formattedDate,firebaseUser.displayName) 
-    // Add a new document in collection "comment"
-    await addDoc(collection(db, `comments_${blogId}`), {
-    userName: firebaseUser.displayName,
-    date: formattedDate,
-    comment: elemt,
-    });
+  const elemt = document.getElementById(`user_comment_${blogId}`).value;
+  const date = new Date();
+  const formattedDate =  date.toISOString()
+  console.log (elemt, formattedDate,firebaseUser.displayName) 
+// Add a new document in collection "comment"
+await addDoc(collection(db, `comments_${blogId}`), {
+  userName: firebaseUser.displayName,
+  date: formattedDate,
+  comment: elemt,
+  });
 }
 
 const name = 'Sipra'
@@ -74,39 +53,41 @@ const name = 'Sipra'
 console.log('hi ' + name)
 console.log(`hi ${name}`)
 function addFormToScreen() {
-    //Get all of the elements that have class "Comment form"//
-    //Loop over each element of the Comment form//
-    //Add form to each element//
-    //Add submit button to multiple page and multiple blog//
-    const elements = document.getElementsByClassName("comment_form")
-    if(elements.length>0){
-        Array.from(elements).forEach(function (element){
-        const blogId = element.dataset.blogid
-        const submitId = `Submit-${blogId}`
-        console.log (blogId)   
-        element.innerHTML=`
-
+//Get all of the elements that have class "Comment form"//
+//Loop over each element of the Comment form//
+//Add form to each element//
+//Add submit button to multiple page and multiple blog//
+  const elements = document.getElementsByClassName("comment_form")
+  if(elements.length>0){
+    Array.from(elements).forEach(function (element){
+    const blogId = element.dataset.blogid
+    const submitId = `Submit-${blogId}`
+    console.log (blogId)   
+    element.innerHTML=`
     <div>
-        <button class="userComment-container">
-            User Comments
-        </button>   
-    <form>
+      <button class="userComment-container">
+        User Comments
+      </button>   
+      <form>
         <label for="user_comment">Comment:</label><br>
         <textarea id="user_comment_${blogId}" rows="4" cols="50"></textarea>
         <button id="${submitId}" class="submit-container" >Submit</button> 
       </form>
     </div>
     `
-    //Create event listner for the Submit Button//
+//Create event listner for the Submit Button//
     const submitButton = document.getElementById(submitId)
     submitButton.addEventListener("click", function (event) {
-      event.preventDefault()
-      myFunction(blogId)  
+    event.preventDefault()
+    myFunction(blogId)  
     })
-        })
-    }
+    })
+  }
     
 }
+// Note from Bianca
+// how do we make it so that this doesn't break if sipra
+// adds a skeleton structure for this in her html files
 async function showCommentToScreen() {
   const elements = document.getElementsByClassName("blog_comments")
   if(elements.length>0){
