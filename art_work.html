@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
 		<link href="index.css" rel="stylesheet" type="text/css" />
 		<link href="art_work.css" rel="stylesheet" type="text/css" />
-</head>
+	</head>
 <body>
 	<h1>Arts and Crafts</h1>
-	<p>"You are the artist of your own life. Don't hand the paintbrush to anyone else. Rather pour your heart and prepare your dream with brush....."</p>
-<div class="art_page_photo_container">
+	<p>"You are the artist of your own life. Don't hand the paintbrush to anyone else. 
+		Rather pour your heart and prepare your dream with brush....."</p>
+	<div class="art_page_photo_container">
 		<img src="images\art_work1.jpg">
-</div>
-	<p>I always want my brushes to be full of paints and my mind full of imaginations. Sometimes it seems to me that life is formless and blurry, especially when I lose my focus amidst the chaotic busyness of life. Art is one thing that has given me satisfaction - it is like meditation and nourishment of mind. Art allows me to discover and preserve my delighted mind.</p>
+	</div>
+	<p>
+		I always want my brushes to be full of paints and my mind full of imaginations. 
+		Sometimes it seems to me that life is formless and blurry, especially when 
+		I lose my focus amidst the chaotic busyness of life. Art is one thing 
+		that has given me satisfaction - it is like meditation and nourishment of mind. 
+		Art allows me to discover and preserve my delighted mind.
+	</p>
 		
 	<h2>My Art Gallery</h2>
-<div class="table-container"> 
-	<button class="button-filter" onclick="showContent('PencilArt','art')">Pencil Art</button>
-    <button class="button-filter" onclick="showContent('PastelArt', 'art')">Pastel Art</button>
-    <button class="button-filter" onclick="showContent('RangoliArt', 'art')">Rangoli Art</button>
-    <button class="button-filter" onclick="showContent('AcrylicOilPaintings', 'art')">Acrylic/Oil Paintings</button>
-</div>
-<p>
-/* Add pictures of my paintings */	
-</p>
+	<div class="table-container"> 
+		<button class="button-filter" onclick="showContent('PencilAndCharcoalArt','art')">Pencil & Charcoal Art</button>
+    	<button class="button-filter" onclick="showContent('PastelArt', 'art')">Pastel Art</button>
+    	<button class="button-filter" onclick="showContent('RangoliArt', 'art')">Rangoli & Jhoti Art</button>
+    	<button class="button-filter" onclick="showContent('AcrylicOilPaintings', 'art')">Acrylic/Oil Paintings</button>
+	</div>
 
-<div id="content"></div>
+
+	<div id="titleContent"></div>
+	<div id="content"></div>
+
+	<div class="blog_comments"
+     	 data-blogid="comments_blog_art_Chita"	>
+	</div>
+	<div class="comment_form"
+		 data-blogid="blog2">
+	</div>
+	
+	<p>
+		/* Add pictures of my paintings */	
+	</p> 
 <div id="art_work_comments"></div>
-  
 
-<script src="art_work.js"> </script>
+
 <script src="content.js"> </script>
+<script src="comment.js" type="module"> </script>
 </body>
 
 </html>

@@ -19,13 +19,13 @@ const showCommentContainer = (blogId) => {
 }
 //Show Content from Art work 
 const titleContentForArtWork = {
-    PencilArt: '<p><h3>Blog for Pencil Art</h3></p>',
+    PencilArt: '<p><h3>Blog for Pencil & Charcoal Art</h3></p>',
     PastelArt: '<p><h3>Blog for Pastel Art</h3></p>',
     RangoliArt: '<p><h3>Blog for Rangoli Art</h3></p>',
-    AcrylicOilPaintings: '<p>Blog for Acrylic/Oil Paintings</h3></p>',
+    AcrylicOilPaintings: '<p><h3>Blog for Acrylic/Oil Paintings</h3></p>',
 }
 const contentForArtWork = {
-    PencilArt: '<p>Content for Pencil Art</p>',
+    PencilArt: '<p>Content for Pencil & Charcoal Art</p>',
     PastelArt: '<p>Content for Pastel Art</p>',
     RangoliArt: '<p>Content for Rangoli Art</p>',
     AcrylicOilPaintings: '<p>Content for Acrylic/Oil Paintings</p>',
