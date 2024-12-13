@@ -48,10 +48,6 @@ await addDoc(collection(db, `comments_${blogId}`), {
   });
 }
 
-const name = 'Sipra'
-
-console.log('hi ' + name)
-console.log(`hi ${name}`)
 function addFormToScreen() {
 //Get all of the elements that have class "Comment form"//
 //Loop over each element of the Comment form//
