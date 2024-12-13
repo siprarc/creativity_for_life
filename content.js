@@ -35,7 +35,7 @@ const titleContentForFood = {
     Indian: '<p><h3>Blog for Indian</h3></p>',
     EastAsian: '<p><h3>Blog for East Asian</h3></p>',
     Italian: '<p><h3>Blog for Italian</h3></p>',
-    African: '<p>Blog for African</h3></p>',
+    African: '<p><h3>Blog for African</h3></p>',
 }
 const contentForFood = {
     Indian: '<p>Content for Indian</p>',
@@ -48,7 +48,7 @@ const titleContentForDrinks = {
     Tea: '<p><h3>Blog for Tea</h3></p>',
     Coffee: '<p><h3>Blog for Coffee</h3></p>',
     Mocktails: '<p><h3>Blog for Mocktails</h3></p>',
-    Smoothies: '<p>Blog for Smoothies</h3></p>',
+    Smoothies: '<p><h3>Blog for Smoothies</h3></p>',
 }
 const contentForDrinks = {
     Tea: '<p>Content for Tea</p>',

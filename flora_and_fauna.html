@@ -4,21 +4,44 @@
 	<link href="flora_and_fauna.css" rel="stylesheet" type="text/css" />
 	<body>
 		<h1>Flora and Fauna</h1>
-		<p>Gardening is an archetypal image of the soul, of innocence, of happiness; it is a place for growth of the inner Self.</p>
+		<p>Gardening is an archetypal image of the soul, of innocence, of happiness; 
+			it is a place for growth of the inner Self.</p>
 	<div class="gardening_page_photo_container">
 		<img class= "gardening_page_photo" src="images\gardening1.jpg">
 	</div>
-		<p>To me, Gardening is simply a stress reducer. It offers a sense of accomplishment and purpose as well as social interaction. It is an important key to happiness and longevity. Research has shown that getting your hands in the soil and contact with a specific soil bacteria called Mycobacterium Vaccae triggers the release of serotonin in our brain. Serotonin is a natural antidepressant and also strengthens the immune system. Growing your own herbs or a few produce gives immense pleasure. There is nothing like picking what you grow and putting it on your plate.</p>
+		<p>To me, Gardening is simply a stress reducer. It offers a sense of 
+			accomplishment and purpose as well as social interaction. It is an important 
+			key to happiness and longevity. Research has shown that getting your hands 
+			in the soil and contact with a specific soil bacteria called Mycobacterium 
+			Vaccae triggers the release of serotonin in our brain. Serotonin is a 
+			natural antidepressant and also strengthens the immune system. Growing 
+			your own herbs or a few produce gives immense pleasure. There is nothing 
+			like picking what you grow and putting it on your plate.
+		</p>
 	
 	<h2>My Garden and my neighbourhood</h2>
 	<div class="table-container"> 
-	<button>Roses</button>
-	<button>Bulbs</button>
-    <button>Herbs</button>
-    <button>Vegetables</button>
-    <button>Other assortments</button>
-</div>
-/* Add pictures of my paintings */
-	</body>
+		<button class="button-filter" onclick="showContent('Roses', 'flora_and_fauna')">Roses</button>
+		<button class="button-filter" onclick="showContent('Bulbs', 'flora_and_fauna')">Bulbs</button>
+    	<button class="button-filter" onclick="showContent('Herbs', 'flora_and_fauna')">Herbs</button>
+    	<button class="button-filter" onclick="showContent('Vegetables', 'flora_and_fauna')">Vegetables</button>
+		<button class="button-filter" onclick="showContent('OtherAssortments', 'flora_and_fauna')">Other assortments</button>
+	</div>
 
+	<div id="titleContent"></div>
+	<div id="content"></div>
+	<div class="blog_comments"
+     	 data-blogid="comments_blog1"	>
+	</div>
+	<div class="comment_form"
+		 data-blogid="blog1">
+	</div>
+	<p>
+		/* Add blog and picture of my flora and fauna */
+	</p>
+<div id="flora_and_fauna_comments"></div>
+
+<script src="content.js"> </script>
+<script src="comment.js" type="module"> </script>
+</body>
 </html>

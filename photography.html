@@ -8,19 +8,51 @@
 	<div class="photography_page_photo_container">
 		<img class= "photography_page_photo" src="images\photography1.jpg">
 	</div>
-		<p>Photographs capture a moment that’s gone forever, impossible to reproduce but we can time travel with those. 
-		As a little girl, I always had a thirst to see the world, and to capture it all on camera. I felt that I could hold an instant of time, of emotion, a memory, right in my hands. I never really took any of the pictures when I was a kid, but I sure did appreciate the pictures in my mom’s old albums.I would spend time flipping through those photo albums that my parents made, looking at them, rearranging them and remembering the moment that they were taken. But I took away many life lessons - gratitude, mindfulness, connection and giving. 
-		Life is about the heart. You may know every technical detail about your camera or about photograph….that doesn’t matter that you will take a good photograph. It needs to have heart. 
-		It was many years later, my husband bought me a Nikon powershot and I would shoot everything and anything - some were blurry and out of focus. But it didn’t matter because I loved it. My interest turned into a hobby and I started to crave better and better equipment that could increase my ability and even took a class. I upgraded from the Nikon Powershot to the D2700. 
-		What I took away from this journey is “A good photograph is one that communicates a fact, touches the heart and leaves the viewer a changed person for having seen it. It is, in a word, effective.”— Irving Penn</p>
+		<p>Photographs capture a moment that’s gone forever, impossible to reproduce 
+			but we can time travel with those. As a little girl, I always had a thirst 
+			to see the world, and to capture it all on camera. I felt that I could hold 
+			an instant of time, of emotion, a memory, right in my hands. I never really 
+			took any of the pictures when I was a kid, but I sure did appreciate the 
+			pictures in my mom’s old albums.I would spend time flipping through those 
+			photo albums that my parents made, looking at them, rearranging them and 
+			remembering the moment that they were taken. But I took away many life 
+			lessons - gratitude, mindfulness, connection and giving. Life is about 
+			the heart. You may know every technical detail about your camera or about 
+			photograph….that doesn’t matter that you will take a good photograph. It 
+			needs to have heart. It was many years later, my husband bought me a 
+			Nikon powershot and I would shoot everything and anything - some were 
+			blurry and out of focus. But it didn’t matter because I loved it. 
+			My interest turned into a hobby and I started to crave better and better 
+			equipment that could increase my ability and even took a class. I upgraded 
+			from the Nikon Powershot to the D2700. What I took away from this 
+			journey is “A good photograph is one that communicates a fact, touches 
+			the heart and leaves the viewer a changed person for having seen it. 
+			It is, in a word, effective.”— Irving Penn
+		</p>
 
 	<h2>My Photo Gallery</h2>
 <div class="table-container"> 
-		<button class="button-filter">Nature and Travels</button>
-    <button class="button-filter">Celebrations and People</button>
-    <button class="button-filter">Still Life</button>
-    <button class="button-filter">Moments and reactions</button>
+	<button class="button-filter" onclick="showContent('NatureAndTravels', 'photography')">Nature and Travels</button>
+    <button class="button-filter" onclick="showContent('celebrationsAndPeople', 'photography')">Celebrations and People</button>
+    <button class="button-filter" onclick="showContent('stillLife', 'photography')">Still Life</button>
+    <button class="button-filter" onclick="showContent('momentsAndReactions', 'photography')">Moments and Reactions</button>
 </div>	
-</body>
+<div id="titleContent"></div>
+<div id="content"></div>
 
+<div class="blog_comments"
+     	 data-blogid="comments_blog1"	>
+</div>
+<div class="comment_form"
+		 data-blogid="blog1">
+</div>
+<p>
+	/* Add pictures of my photographs */	
+</p> 
+<div id="photography_comments"></div>
+
+<script src="content.js"> </script>
+<script src="comment.js" type="module"> </script>
+
+</body>
 </html>

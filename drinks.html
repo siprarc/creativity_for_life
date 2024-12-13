@@ -8,14 +8,33 @@
 	<img class="tall-glasses" src="images\drinks0.jpg">
 </div>
 
-	<p>"Friends don't let friends go thirsty....So join me with my favorite drinks as happy days are hear again ....."</p>
+	<p>"Friends don't let friends go thirsty....So join me with my 
+		favorite drinks as happy days are hear again ....."</p>
 <h2>My Favorite Drinks</h2>
 <div class="table-container"> 
-		<button class="button-filter">Tea</button>
-    <button class="button-filter">Cofee</button>
-    <button class="button-filter">Mocktails</button>
-    <button class="button-filter">Smoothies</button>
+	<button class="button-filter" onclick="showContent('Tea', 'drinks')">Tea</button>
+	<button class="button-filter" onclick="showContent('Coffee', 'drinks')">Coffee</button>
+	<button class="button-filter" onclick="showContent('Mocktails', 'drinks')">Mocktails</button>
+	<button class="button-filter" onclick="showContent('Smoothies', 'drinks')">Smoothies</button>
 </div>
+
+<div id="titleContent"></div>
+<div id="content"></div>
+
+<div class="blog_comments"
+     	 data-blogid="comments_blog1"	>
+</div>
+<div class="comment_form"
+		 data-blogid="blog1">
+</div>
+<p>
+	/* Add pictures of my drinks */	
+</p> 
+<div id="drink_comments"></div>
+
+
+<script src="content.js"> </script>
+<script src="comment.js" type="module"> </script>
 </body>
 
 </html>
