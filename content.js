@@ -19,15 +19,31 @@ const showCommentContainer = (blogId) => {
 }
 //Show Content from Art work 
 const titleContentForArtWork = {
-    PencilArt: '<p><h3>Blog for Pencil & Charcoal Art</h3></p>',
+    PencilAndCharcoalArt: '<p><h3>Blog for Pencil & Charcoal Art</h3></p>',
     PastelArt: '<p><h3>Blog for Pastel Art</h3></p>',
-    RangoliArt: '<p><h3>Blog for Rangoli Art</h3></p>',
+    RangoliArt: '<p><h3>Blog for Rangoli & Jhoti Art</h3></p>',
     AcrylicOilPaintings: '<p><h3>Blog for Acrylic/Oil Paintings</h3></p>',
 }
 const contentForArtWork = {
-    PencilArt: '<p>Content for Pencil & Charcoal Art</p>',
+    PencilAndCharcoalArt: '<p>Content for Pencil & Charcoal Art</p>',
     PastelArt: '<p>Content for Pastel Art</p>',
-    RangoliArt: '<p>Content for Rangoli Art</p>',
+
+    RangoliArt: `
+	<div class="rangoli_blog_photo_container">
+	<div class="rangoli_blog_photo_container_group">
+		<img class="rangoli_blog_photos content-images" src="images/Rangoli_Chita_art_images/IMG_0534.JPG">
+		<img class="rangoli_blog_photos content-images" src="images/Rangoli_Chita_art_images/IMG_0535.JPG">	
+	</div>
+	<div>
+    	<p>This treditional art form of Odisha is called Joti Chita which is designed on 
+		the walls or on floors from rice paste. People use their fingers as brush to make thsese
+		during festive and auspicious occasions. It is quite unque from Rangoli. You will find 
+		these commonly on the front doors of Odiya houses during the "Margashira" month 
+		(Hindu lunar calendar) which falls in November or December. Floral designs and small 
+		foot mark ofGodess Lakshmi are designed as chita to welcome Godess Lakshmi.
+		</p>
+		${showCommentContainer("blogId_rangoli_chitt1and2")} 
+	`,
     AcrylicOilPaintings: '<p>Content for Acrylic/Oil Paintings</p>',
 }
 //Show Content from Food 
