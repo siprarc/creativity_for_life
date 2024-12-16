@@ -3,7 +3,10 @@
 display:flex;
 justify-content: center;	
 }
-
+/* Change picture size */
+img {
+	width: 200px;
+  }
 /*Justify the topSectionComment*/
 .topCommentSection{
 	display: flex;
