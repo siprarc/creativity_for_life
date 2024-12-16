@@ -152,6 +152,9 @@ position: absolute;
 }
 
 /*Navigate container */
+.nav-wrapper{
+  height: 200px;
+}
 .nav-container {
 position: relative;
 margin-right: 30%;
