@@ -6,6 +6,7 @@
 // for the categories (one for the titles, one for the content).
 // update `contentObject` with the new category key and title and content objects
 
+import { addFormToScreen, showCommentToScreen } from "./comment.js"
 const showCommentContainer = (blogId) => {
 	console.log ("FUN")
   return `
@@ -186,4 +187,8 @@ console.log(titleContentObj[type])
 console.log(contentObj)			
 document.getElementById('titleContent').innerHTML = titleContentObj[type]
 document.getElementById('content').innerHTML = contentObj[type]
+addFormToScreen()
+//Add comments of users to show on the blog post//
+showCommentToScreen()
 }
+window.showContent = showContent

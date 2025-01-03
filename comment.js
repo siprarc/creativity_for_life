@@ -48,7 +48,7 @@ await addDoc(collection(db, `comments_${blogId}`), {
   });
 }
 
-function addFormToScreen() {
+export function addFormToScreen() {
 //Get all of the elements that have class "Comment form"//
 //Loop over each element of the Comment form//
 //Add form to each element//
@@ -84,7 +84,7 @@ function addFormToScreen() {
 // Note from Bianca
 // how do we make it so that this doesn't break if sipra
 // adds a skeleton structure for this in her html files
-async function showCommentToScreen() {
+export async function showCommentToScreen() {
   const elements = document.getElementsByClassName("blog_comments")
   if(elements.length>0){
     Array.from(elements).forEach(async function (element){
