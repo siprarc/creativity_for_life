@@ -36,16 +36,20 @@ onAuthStateChanged(auth, (user) => {
 });
 
 async function myFunction(blogId) {
-  const elemt = document.getElementById(`user_comment_${blogId}`).value;
+  const textarea = document.getElementById(`user_comment_${blogId}`);
+  const elemt = textarea.value;
   const date = new Date();
   const formattedDate =  date.toISOString()
   console.log (elemt, formattedDate,firebaseUser.displayName) 
 // Add a new document in collection "comment"
-await addDoc(collection(db, `comments_${blogId}`), {
+  await addDoc(collection(db, `comments_${blogId}`), {
   userName: firebaseUser.displayName,
   date: formattedDate,
   comment: elemt,
   });
+//Add code to clear text area
+
+  textarea.value = '';
 }
 
 export function addFormToScreen() {
