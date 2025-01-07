@@ -50,6 +50,8 @@ async function myFunction(blogId) {
 //Add code to clear text area
 
   textarea.value = '';
+//Show comment to screen as soon as the user submit the comment form
+showCommentToScreen()
 }
 
 export function addFormToScreen() {
@@ -78,8 +80,8 @@ export function addFormToScreen() {
 //Create event listner for the Submit Button//
     const submitButton = document.getElementById(submitId)
     submitButton.addEventListener("click", function (event) {
-    event.preventDefault()
-    myFunction(blogId)  
+      event.preventDefault()
+      myFunction(blogId)  
     })
     })
   }
