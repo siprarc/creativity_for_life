@@ -120,18 +120,28 @@ buttonConfigs.forEach(config => document.getElementById(config.id).addEventListe
 //Get all blogs in a collection
 const getDocsFromCollection = async (collectionName) => { 
   const documents = []
-const q = query (collection(db, "blog_1_comments"),  where ("blog_id","==", "blog_2_comment"));
+/*const q = query (collection(db, "blog_1_comments"),  where ("blog_id","==", "blog_2_comment"));*/
+const q = query (collection(db, blog_comments),  where (blogId,"==", ));
 const querySnapshot = await getDocs(q);
 querySnapshot.forEach((doc) => {
   documents.push(doc.data())
 })
 return documents
 };
-const getBlog2Comments = async () => {
+/*const getBlog2Comments = async () => {
 const comments = await getDocsFromCollection('blog_1_comments')
+
+return comments
+}*/
+
+const getblog_comments = async () => {
+const comments = await getDocsFromCollection(blog_comments)
 
 return comments
 }
 
-const comments = await getBlog2Comments()
+/*const comments = await getBlog2Comments()
+console.log(comments)*/
+
+const comments = await getblog_comments()
 console.log(comments)
