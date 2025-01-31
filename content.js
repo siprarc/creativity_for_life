@@ -36,7 +36,7 @@ const contentForArtWork = {
 		<img class="rangoli_blog_photos content-images" src="images/Rangoli_Chita_art_images/IMG_0535.JPG">	
 	</div>
 	<div>
-    	<p>This treditional art form of Odisha is called Joti Chita which is designed on 
+    	<p>This traditional art form of Odisha is called Joti Chita which is designed on 
 		the walls or on floors from rice paste. People use their fingers as brush to make thsese
 		during festive and auspicious occasions. It is quite unque from Rangoli. You will find 
 		these commonly on the front doors of Odiya houses during the "Margashira" month 
