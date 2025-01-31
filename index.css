@@ -331,10 +331,12 @@ font-weight: bold;
 .contact_icon{
 width: 30px;
 height: auto;
+/*justify-content: left;*/
 }
 
 .contact_image {
 text-decoration:none;
+justify-content: left;
 }
 
 
