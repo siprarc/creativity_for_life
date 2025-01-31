@@ -39,12 +39,12 @@ async function myFunction(blogId) {
   const textarea = document.getElementById(`user_comment_${blogId}`);
   const elemt = textarea.value;
   const date = new Date();
-  const formattedDate =  date.toISOString()
-  console.log (elemt, formattedDate,firebaseUser.displayName) 
+  const ISOformattedDate =  date.toISOString()
+ 
 // Add a new document in collection "comment"
   await addDoc(collection(db, `comments_${blogId}`), {
   userName: firebaseUser.displayName,
-  date: formattedDate,
+  date: ISOformattedDate,
   comment: elemt,
   });
 //Add code to clear text area
@@ -64,19 +64,33 @@ export function addFormToScreen() {
     Array.from(elements).forEach(function (element){
     const blogId = element.dataset.blogid
     const submitId = `Submit-${blogId}`
+    const userCommentId =`userComment-${blogId}`
+    const userCommentFormId = `userCommentForm-${blogId}`
     console.log (blogId)   
     element.innerHTML=`
     <div>
-      <button class="userComment-container">
-        User Comments
-      </button>   
-      <form>
+      <button id="${userCommentId}" class="userComment-container">User Comments</button>   
+      <form id="${userCommentFormId}" class="comment-form">
         <label for="user_comment">Comment:</label><br>
         <textarea id="user_comment_${blogId}" rows="4" cols="50"></textarea>
         <button id="${submitId}" class="submit-container" >Submit</button> 
+      
       </form>
     </div>
     `
+
+//This makes the user comment form hidden//
+document.getElementById(userCommentFormId).style.visibility= "hidden";
+
+//Create event listner for the User Comment Button//
+  const userCommentButton = document.getElementById(userCommentId)
+  userCommentButton.addEventListener("click", function (event) {
+  event.preventDefault()
+
+//This where the code goes to showing the form
+  document.getElementById(userCommentFormId).style.visibility= "visible";
+})
+
 //Create event listner for the Submit Button//
     const submitButton = document.getElementById(submitId)
     submitButton.addEventListener("click", function (event) {
@@ -94,6 +108,7 @@ export async function showCommentToScreen() {
   const elements = document.getElementsByClassName("blog_comments")
   if(elements.length>0){
     Array.from(elements).forEach(async function (element){
+    element.innerHTML='' 
     const blogId = element.dataset.blogid
     const comments = []
   
@@ -105,7 +120,17 @@ export async function showCommentToScreen() {
     });
     
     comments.forEach(comment => {
-       console.log(comment)   
+       console.log(comment)
+//Formate ISO date to Normal date on the page (front-end) 
+       const date = new Date(comment.date);
+       
+       const year = date.getFullYear();
+       const month = date.getMonth() + 1; // JavaScript months are 0-indexed
+       const day = date.getDate();
+       
+       const formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+       
+       console.log(formattedDate); // Output: "2023-12-25"     
     //Create element for each comment
        const user_idContainer = document.createElement('p')
        const dateContainer = document.createElement('p')
@@ -113,7 +138,7 @@ export async function showCommentToScreen() {
     
     // add text to each element
        user_idContainer.innerHTML = comment.userName
-       dateContainer.innerHTML = comment.date
+       dateContainer.innerHTML = formattedDate
        commentContainer.innerHTML = comment.comment
        
     //Create div syntax for 'username' and 'date'
