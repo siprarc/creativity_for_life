@@ -118,7 +118,9 @@ export async function showCommentToScreen() {
        console.log(doc.id, " => ", doc.data());
        comments.push(doc.data())
     });
-    
+    /*Sort the comment based on the date of the comment*/
+    comments.sort((a, b) => new Date(b.date) - new Date(a.date));
+
     comments.forEach(comment => {
        console.log(comment)
 //Formate ISO date to Normal date on the page (front-end) 
