@@ -1,14 +1,18 @@
+
+.about_me_container {
+	width: 1000px;
+}
+
 /*Center justify main photo*/
 .about_me_photo_container {
-display:flex;
-justify-content: center;	
+float: right;
+margin-left: 28px;
+margin-bottom: 10px;
 }
 /* Change picture size */
+/* you should only set the width OR height otherwise the image will be distorted  */
 img {
-	width: 200px;
+	width: 180px;
+	height: 160px;
   }
-/*Justify the topSectionComment*/
-.topCommentSection{
-	display: flex;
-	justify-content: space-between;
-}
+
