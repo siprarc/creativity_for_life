@@ -7,6 +7,7 @@ height: 360px;
 /*Wrapping the text line below food photo and drink photo separately*/
 .image-text-wrapper {
 display:flex;
+justify-content: space-around;
 }
 
 /*Center justify main photo*/
