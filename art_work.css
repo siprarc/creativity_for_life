@@ -4,10 +4,5 @@ display:flex;
 justify-content: center;	
 }
 
-/*Justify the topSectionComment*/
-.topCommentSection{
-	display: flex;
-	justify-content: space-between;
-}
 
 
