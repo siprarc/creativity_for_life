@@ -27,7 +27,18 @@ const titleContentForArtWork = {
 }
 const contentForArtWork = {
     PencilAndCharcoalArt: '<p>Content for Pencil & Charcoal Art</p>',
-    PastelArt: '<p>Content for Pastel Art</p>',
+    
+	PastelArt: `
+	<div class="pastel_art_photo_container">
+		<img class="pastel_art_blog_photos content-images" src="images/Pastel_art_images/P-Landscape1.jpg">
+	</div>
+	<div>
+    	<p>Pastel art is a versatile and expressive medium that involves using powdered pigment 
+		sticks to create vibrant, textured artwork. I have basically used three techniques 
+		here - layering, blending and scumbling.
+		</p>
+		${showCommentContainer("blogId_pastel_art_landscape1")} 
+	`,
 
     RangoliArt: `
 	<div class="rangoli_blog_photo_container">
