@@ -132,7 +132,34 @@ const titleContentForPhotography = {
     momentsAndReactions: '<p><h3>Blog for Moments And Reactions</h3></p>',
 }
 const contentForPhotography = {
-	NatureAndTravels: '<p>Content for Nature And Travels</p>',
+	NatureAndTravels: `
+	<div class="NatureAndTravels_blog_photo_container">
+	<div class="NatureAndTravels_blog_photo_container_group">
+		<img class="NatureAndTravels_blog_photos content-images" src="images/Photography_blog_images/Sunny_lighthouse1.JPG">
+		<img class="NatureAndTravels_blog_photos content-images" src="images/Photography_blog_images/Sunny_lighthouse2.JPG">
+		<img class="NatureAndTravels_blog_photos content-images" src="images/Photography_blog_images/Sunny_lighthouse3.JPG">
+	</div>
+	<div>
+    	<p>The coast of Maine is dotted with 65 lighthouses. I visited one of these picturesque landmarks to appreciate 
+		both the history and beauty of Maine's Atlantic coast. Maine's oldest lighthouse, is located in Cape Elizabeth, 
+		and is a popular spot for photos and is often visited. 
+		</p>
+		${showCommentContainer("blogId_NatureAndTravels_Lighthouse_Sunny")} 
+	
+	<div class="NatureAndTravels_blog_photo_container2">
+	<div class="NatureAndTravels_blog_photo_container_group">
+		<img class="NatureAndTravels_blog_photos content-images" src="images/Photography_blog_images/Cloudy_lighthouse1.JPG">
+		<img class="NatureAndTravels_blog_photos content-images" src="images/Photography_blog_images/Cloudy-Stormy_lighthouse2.JPG">
+	</div>
+	<div>
+    	<p>The lighthouse is located by an interesting rock formation that looks like petrified wood. 
+		However, it's made of alternating layers of quartzite and dark grey phyllite. During storms,
+		the waves crash over the top of its lantern room. About 10 miles out, and visible only on a clear day, is the Halfway 
+		Rock Light Station, which was first lit in 1871 and is located halfway between Cape Elizabeth and Cape Small. 
+		</p>
+		${showCommentContainer("blogId_NatureAndTravels_Lighthouse_Stormy")} 
+	`,
+	
     celebrationsAndPeople: '<p>Content for Celebrations And People</p>',
     stillLife: '<p>Content for Still Life</p>',
     momentsAndReactions: '<p>Content for Moments And Reactions</p>',

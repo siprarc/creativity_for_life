@@ -311,7 +311,7 @@ font-size: 40px;
 
 .flex-container {
   display:flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 16px;
   }
 input {
@@ -338,5 +338,3 @@ height: auto;
 text-decoration:none;
 justify-content: left;
 }
-
-

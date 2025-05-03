@@ -122,7 +122,7 @@ export async function showCommentToScreen() {
     comments.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     comments.forEach(comment => {
-       console.log(comment)
+       console.log(comment.date)
 //Formate ISO date to Normal date on the page (front-end) 
        const date = new Date(comment.date);
        
@@ -132,7 +132,7 @@ export async function showCommentToScreen() {
        
        const formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
        
-       console.log(formattedDate); // Output: "2023-12-25"     
+       //console.log(formattedDate); // Output: "2023-12-25"     
     //Create element for each comment
        const user_idContainer = document.createElement('p')
        const dateContainer = document.createElement('p')

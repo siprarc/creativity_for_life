@@ -12,3 +12,13 @@ font-weight: bold;
 input {
     margin-bottom: 15px;
 }
+/* Add user name welcome name styling to rhs */
+P {
+    display: block;
+    
+    position: absolute;
+    right: 0;
+    top: 10px;
+    margin-right: 55px;
+    unicode-bidi: isolate;
+}
