@@ -1,6 +1,7 @@
 
 .about_me_container {
-	width: 1000px;
+/*width: 1000px;*/
+	/*margin-left: 50px;*/
 }
 
 /*Center justify main photo*/
@@ -12,7 +13,6 @@ margin-bottom: 10px;
 /* Change picture size */
 /* you should only set the width OR height otherwise the image will be distorted  */
 img {
-	width: 180px;
-	height: 160px;
+	width: 190px;
   }
 
