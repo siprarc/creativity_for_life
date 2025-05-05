@@ -1,7 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js'
 
 // Add Firebase products that you want to use
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, setPersistence, browserLocalPersistence} from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'
+  import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile, setPersistence, browserLocalPersistence} from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js'
   import { getFirestore, doc, getDoc, getDocs, collection, setDoc,addDoc, query, where } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js'
  
 // Your web app's Firebase configuration
@@ -22,6 +22,27 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 //Create a reference to db in firebase
 const db = getFirestore(app);
+let firebaseUser= {}
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log('user', user)
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    const uid = user.uid;
+    firebaseUser = user
+    console.log(user, firebaseUser, user !== firebaseUser)
+    displayNavbar()
+    if (user !== firebaseUser){
+      // for spme reason this isn't storing the firebase user info, we need this to display the username
+        
+    }
+    // ...
+  } else {
+   // window.location.href = 'log_in.html'; 
+    // Redirect to login if no username
+
+  }
+});
 //Need separate function that get info for email, password; Hint: Object destructuring 
 const getUserInfo = (emailId, passwordId,userNameId) => {
   const email = document.getElementById(emailId).value
@@ -60,6 +81,8 @@ const signUpUser = async() => {
         .then(async() => {
         console.log("Profile Success"
         ) 
+
+
 //Add username collection to firebase 
 // Profile updated!
         await setDoc(doc(db, "usernames",userName), {});
@@ -104,7 +127,59 @@ const signInUser = () => {
     console.log(errorMessage)
   });	
 }
-//Create Event listner for Sign-up and Sign-in
+//Sign Out
+const signOutUser = async() => signOut(auth).then(() => {
+  // Sign-out successful.
+  console.log ('Success')
+    }).catch((error) => {
+  // An error happened.
+  console.log('error occureded')
+  });
+
+const displayNavbar = ()=>{
+// create a the nav html in your javascript store in variable
+let div = document.createElement("div");
+console.log('username', firebaseUser)
+const welcomeEle = !!firebaseUser.displayName ? `<p>Welcome, ${firebaseUser.displayName}!</p>` : `<span></span>`
+const navigation = `
+${welcomeEle}
+<div class="navbar">
+	<div class="dropdown">
+    <button class="dropbtn">Log In
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="log_in.html">Sign-In</a>
+    <button id="sign-out"
+            class="dropbtn">Sign-Out
+      <i class="fa fa-caret-down"></i>
+    </button>
+  </div>
+</div>
+<a href="index.html#contact_id">Contact</a>
+  <div class="dropdown">
+    <button class="dropbtn">My Blog Post
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="art_work.html">Art work</a>
+      <a href="food_and_drinks.html">Food and Drinks</a>
+      <a href="photography.html">Photography</a>
+      <a href="poetry.html">Poetry</a>
+      <a href="flora_and_fauna.html">Flora and Fauna</a>
+    </div>
+  </div>
+<a href="About me.html">About me</a>
+<a href="index.html">Home</a>
+</div>`
+div.innerHTML = navigation
+// prepend nav bar to body
+const element = document.querySelector("body");
+element.prepend(div);
+}
+displayNavbar()
+
+//Create Event listner for Sign-up, Sign-in and Sign-out
 let buttonConfigs = [
   {
   id:"sign-up",
@@ -114,9 +189,17 @@ let buttonConfigs = [
   id:"sign-in",
   func:signInUser,
   },
+  {
+  id:"sign-out",
+  func: signOutUser,
+    },
 ];
+
+
+
+
 //Using for Each signing functions with a loop
-buttonConfigs.forEach(config => document.getElementById(config.id).addEventListener("click",config.func));
+buttonConfigs.forEach(config => !!document.getElementById(config.id)  && document.getElementById(config.id).addEventListener("click",config.func));
 //Get all blogs in a collection
 const getDocsFromCollection = async (collectionName) => { 
   const documents = []
@@ -128,20 +211,3 @@ querySnapshot.forEach((doc) => {
 })
 return documents
 };
-/*const getBlog2Comments = async () => {
-const comments = await getDocsFromCollection('blog_1_comments')
-
-return comments
-}*/
-
-const getblog_comments = async () => {
-const comments = await getDocsFromCollection(blog_comments)
-
-return comments
-}
-
-/*const comments = await getBlog2Comments()
-console.log(comments)*/
-
-const comments = await getblog_comments()
-console.log(comments)

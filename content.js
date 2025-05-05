@@ -64,12 +64,51 @@ const titleContentForFood = {
     EastAsian: '<p><h3>Blog for East Asian</h3></p>',
     Italian: '<p><h3>Blog for Italian</h3></p>',
     African: '<p><h3>Blog for African</h3></p>',
+	SouthAmerican: '<p><h3>Blog for South American</h3></p>',
 }
 const contentForFood = {
-    Indian: '<p>Content for Indian</p>',
-    EastAsian: '<p>Content for East Asian</p>',
+	//Move the above Indian food content here from the title section
+    Indian: `
+	<div class="indian_food_photo_container1">
+		<img class="indian_food_blog_photos content-images" src="images/Food_blog_images/South_Indian_tiffin.jpg">
+	</div>
+	<div>
+    	<p>South Indian tiffin refers to a variety of light, flavorful, and healthy breakfast or snack
+			 dishes commonly enjoyed in South India. These dishes are typically made with rice, lentils, 
+			 and spices, often served with chutneys and sambar. Popular South Indian tiffin items include
+			 Iddli, Dosa (Indian creepe'), Vada (savory fried donout hole), Upma, Pongal rice.
+		</p>
+		${showCommentContainer("blogId_Indian_food_tiffin1")} 
+	`,
+
+    EastAsian: `
+	<div class="indian_food_photo_container2">
+		<img class="indian_food_blog_photos content-images" src="images/Food_blog_images/Kimchi_rice.jpg">
+	</div>
+	<div>
+    	<p>Kimchi Rice (Kimchi Bokkeumbap) is a flavorful Korean fried rice dish made by 
+		stir-frying cooked rice with aged kimchi, vegetables, and sometimes protein like 
+		egg, tofu, or meat. It is a quick, easy, and delicious way to use leftover rice 
+		and kimchi.
+		To elaborate more, Kimchi is a traditional Korean fermented vegetable dish, 
+		typically made with napa cabbage and radish, seasoned with chili powder, garlic, 
+		ginger, scallions, and salted seafood (like fish sauce or shrimp paste). 
+		It undergoes fermentation, which enhances its tangy, spicy, and umami-rich 
+		flavor while also boosting its probiotic content. 
+		Kimchi is an essential part of Korean cuisine, known for its bold taste and 
+		numerous health benefits. It uis rich in Probiotics which help in supporting 
+		gut health and digestion. It is rich in vitamins A, C, and antioxidants which 
+		helps to boosts immunity. It also aids metabolism as it is rich in capsaicin.
+		It is also known to supports heart health by helping lower cholesterol and 
+		inflammation. Kimchi is used to make various dishes like kimchi rice, stews, 
+		and pancakes.
+		</p>
+		${showCommentContainer("blogId_Kimchi_rice2")} 
+	`,
+
     Italian: '<p>Content for Italian</p>',
     African: '<p>Content for African</p>',
+	SouthAmerican: '<p>Content for SouthAmerican</p>',
 }
 //Show Content from Drinks 
 const titleContentForDrinks = {
@@ -93,7 +132,34 @@ const titleContentForPhotography = {
     momentsAndReactions: '<p><h3>Blog for Moments And Reactions</h3></p>',
 }
 const contentForPhotography = {
-	NatureAndTravels: '<p>Content for Nature And Travels</p>',
+	NatureAndTravels: `
+	<div class="NatureAndTravels_blog_photo_container">
+	<div class="NatureAndTravels_blog_photo_container_group">
+		<img class="NatureAndTravels_blog_photos content-images" src="images/Photography_blog_images/Sunny_lighthouse1.JPG">
+		<img class="NatureAndTravels_blog_photos content-images" src="images/Photography_blog_images/Sunny_lighthouse2.JPG">
+		<img class="NatureAndTravels_blog_photos content-images" src="images/Photography_blog_images/Sunny_lighthouse3.JPG">
+	</div>
+	<div>
+    	<p>The coast of Maine is dotted with 65 lighthouses. I visited one of these picturesque landmarks to appreciate 
+		both the history and beauty of Maine's Atlantic coast. Maine's oldest lighthouse, is located in Cape Elizabeth, 
+		and is a popular spot for photos and is often visited. 
+		</p>
+		${showCommentContainer("blogId_NatureAndTravels_Lighthouse_Sunny")} 
+	
+	<div class="NatureAndTravels_blog_photo_container2">
+	<div class="NatureAndTravels_blog_photo_container_group">
+		<img class="NatureAndTravels_blog_photos content-images" src="images/Photography_blog_images/Cloudy_lighthouse1.JPG">
+		<img class="NatureAndTravels_blog_photos content-images" src="images/Photography_blog_images/Cloudy-Stormy_lighthouse2.JPG">
+	</div>
+	<div>
+    	<p>The lighthouse is located by an interesting rock formation that looks like petrified wood. 
+		However, it's made of alternating layers of quartzite and dark grey phyllite. During storms,
+		the waves crash over the top of its lantern room. About 10 miles out, and visible only on a clear day, is the Halfway 
+		Rock Light Station, which was first lit in 1871 and is located halfway between Cape Elizabeth and Cape Small. 
+		</p>
+		${showCommentContainer("blogId_NatureAndTravels_Lighthouse_Stormy")} 
+	`,
+	
     celebrationsAndPeople: '<p>Content for Celebrations And People</p>',
     stillLife: '<p>Content for Still Life</p>',
     momentsAndReactions: '<p>Content for Moments And Reactions</p>',

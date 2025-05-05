@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
-	<head><link href="index.css" rel="stylesheet" type="text/css" ></head>
-	<link href="food.css" rel="stylesheet" type="text/css" />
+	<head>
+		<link href="index.css" rel="stylesheet" type="text/css" >
+		<link href="food.css" rel="stylesheet" type="text/css" />
+		<link href="comment.css" rel="stylesheet" type="text/css" />
+	</head>
 <body>
 	<h1>Food</h1>
 
@@ -9,31 +12,30 @@
 	<img src="images\food2.jpg">
 	</div>
 	<p>"My food is here to heal your broken heart.....". 
-		I don't love to follow recipes rather acquire the technique and adapt 
-		so that I can share my knowledge and love for food
+		I don't like to follow recipes rather acquire the technique and adapt 
+		so that I can share my knowledge and love for food across the worls. 
+		I alawys like to try different cuisines irrespective of countries and physical 
+		boundaries. Some of the cuisines I like to cook or eat are categorized below.
 	</p>
 	<h2>My Favorite Food</h2>
 
   	<div class="table-container"> 
 		<button class="button-filter" onclick="showContent('Indian', 'food')">Indian</button>
 		<button class="button-filter" onclick="showContent('EastAsian', 'food')">East Asian</button>
-    	<button class="button-filter" onclick="showContent('Italian', 'food')">Italian</button>
+    	<button class="button-filter" onclick="showContent('Italian/European', 'food')">Italian/European</button>
     	<button class="button-filter" onclick="showContent('African', 'food')">African</button>
+		<button class="button-filter" onclick="showContent('South American', 'food')">South American</button>
 	</div>
+
 	<div id="titleContent"></div>
 	<div id="content"></div>
-	<div class="blog_comments"
-     	 data-blogid="comments_blog1"	>
-	</div>
-	<div class="comment_form"
-		 data-blogid="blog1">
-	</div>
-	<p>
-	/* Add pictures of my food items */	
-	</p> 
+
+	
+	
 	<div id="food_comments"></div>
 
-	<script src="content.js"> </script>
+	<script src="content.js" type="module"> </script>
 	<script src="comment.js" type="module"> </script>
+	<script src="index.js" type="module"> </script>
 </body>
 </html>
