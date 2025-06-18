@@ -331,10 +331,22 @@ font-weight: bold;
 .contact_icon{
 width: 30px;
 height: auto;
-/*justify-content: left;*/
 }
 
 .contact_image {
 text-decoration:none;
 justify-content: left;
+}
+
+/*Signature Photo size*/
+.signature_image{
+  width: 200px;
+  height: 100px;
+  }
+.signature_image {
+  justify-content: right;
+  } 
+
+.welcomeEle {
+  justify-content: right;  
 }
