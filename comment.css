@@ -1,8 +1,6 @@
 /*--<<Style User Comment>>--*/
 .userComment-container {
-	display:flex;
-	justify-content: left;
-	justify-content: space-around;
+	margin-bottom: 16px;
 	font-size: 16px;
 }
 /*--<<Move Submit button to left side>>--*/
@@ -10,6 +8,7 @@
 	display:flex;
 	justify-content: left;
 	justify-content: space-around;
+	margin-bottom: 20px;
 	font-size: 16px;
 }
 /*Justify the topSectionComment*/
