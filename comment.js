@@ -28,10 +28,10 @@ onAuthStateChanged(auth, (user) => {
     if (user !== firebaseUser){
         firebaseUser = user
     }
-    // ...
   } else {
     // User is signed out
-    // ...
+    firebaseUser = {}
+    
   }
 });
 
@@ -40,17 +40,24 @@ async function myFunction(blogId) {
   const elemt = textarea.value;
   const date = new Date();
   const ISOformattedDate =  date.toISOString()
- 
-// Add a new document in collection "comment"
+
+
+
+//This code will help to handle errors
+  try {
+  // Add a new document in collection "comment"
   await addDoc(collection(db, `comments_${blogId}`), {
-  userName: firebaseUser.displayName,
-  date: ISOformattedDate,
-  comment: elemt,
-  });
+    userName: firebaseUser.displayName,
+    date: ISOformattedDate,
+    comment: elemt,
+    });
+  } catch (error) {
+    console.log (error)
+  }
 //Add code to clear text area
 
   textarea.value = '';
-//Show comment to screen as soon as the user submit the comment form
+//Show comment or error message to screen as soon as the user submit the comment form
 showCommentToScreen()
 }
 
@@ -80,15 +87,15 @@ export function addFormToScreen() {
     `
 
 //This makes the user comment form hidden//
-document.getElementById(userCommentFormId).style.visibility= "hidden";
+document.getElementById(userCommentFormId).style.display= "none";
 
 //Create event listner for the User Comment Button//
   const userCommentButton = document.getElementById(userCommentId)
   userCommentButton.addEventListener("click", function (event) {
   event.preventDefault()
 
-//This where the code goes to showing the form
-  document.getElementById(userCommentFormId).style.visibility= "visible";
+//This is where the code goes to show the form
+  document.getElementById(userCommentFormId).style.display= "block";
 })
 
 //Create event listner for the Submit Button//
