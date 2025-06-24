@@ -26,21 +26,21 @@ let firebaseUser= {}
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log('user', user)
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/auth.user
+  // User is signed in, see docs for a list of available properties
+  // https://firebase.google.com/docs/reference/js/auth.user
     const uid = user.uid;
     firebaseUser = user
     console.log(user, firebaseUser, user !== firebaseUser)
-    displayNavbar()
-    if (user !== firebaseUser){
-      // for spme reason this isn't storing the firebase user info, we need this to display the username
-        
-    }
-    // ...
+    console.log('in auth')
+    console.log('done auth')
+let div1 = document.createElement("div");
+  console.log('username', firebaseUser)
+  const welcomeEle = !!firebaseUser.displayName ? `<p>Welcome, ${firebaseUser.displayName}!</p>` : `<span></span>`
+  document.getElementById('welcomeEle').innerHTML = welcomeEle  
+  if (user !== firebaseUser){}
   } else {
-   // window.location.href = 'log_in.html'; 
-    // Redirect to login if no username
-
+  // window.location.href = 'log_in.html'; 
+  // Redirect to login if no username
   }
 });
 //Need separate function that get info for email, password; Hint: Object destructuring 
@@ -49,9 +49,9 @@ const getUserInfo = (emailId, passwordId,userNameId) => {
   const password = document.getElementById(passwordId).value 
 let userName 
   if (userNameId) { 
-    userName = document.getElementById(userNameId).value  
+  userName = document.getElementById(userNameId).value  
   }
-  return({
+return({
     email,
     password,
     userName, 
@@ -69,57 +69,50 @@ const signUpUser = async() => {
   const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
   //this is the code if the username exists in the db    
-      console.log("Document data:", docSnap.data());
-      alert("Username is already in use")
+    console.log("Document data:", docSnap.data());
+    alert("Username is already in use")
     } else {
-      createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
 // Signed up 
-        updateProfile(auth.currentUser, {
-        displayName: userName, 
-        })
-        .then(async() => {
-        console.log("Profile Success"
-        ) 
-
-
+  updateProfile(auth.currentUser, {
+  displayName: userName, 
+    })
+  .then(async() => {
+    console.log("Profile Success"
+    ) 
 //Add username collection to firebase 
 // Profile updated!
-        await setDoc(doc(db, "usernames",userName), {});
-      }).catch((error) => {
-          console.log(error)
+  await setDoc(doc(db, "usernames",userName), {});
+  }).catch((error) => {
+    console.log(error)
 // An error occurred
-          alert(error.message);
-          console.log("Profile already exists in the database");
-        });
-          console.log("Success")
+  alert(error.message);
+    console.log("Profile already exists in the database");
+    });
+    console.log("Success")
 //This is where we make the call for User with User name
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorMessage)
-          alert(errorMessage)
-        })
-  // docSnap.data() will be undefined in this case
-          console.log("No such document!");
-      }
-
+    })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorMessage)
+    alert(errorMessage)
+    })
+// docSnap.data() will be undefined in this case
+    console.log("No such document!");
+    }
   }
 //For Sign-In
 const signInUser = () => {
   const {
   email,password  
   } = getUserInfo("sign-in-email","sign-in-password")
-//const emailSignIn = document.getElementById("sign-in-email").value
-//const passwordSignIn = document.getElementById("sign-in-password").value
   console.log(email)
   setPersistence(auth,browserLocalPersistence)
   .then(() => {
-  // Signed in 
-    
-    //console.log("Success")
-    return signInWithEmailAndPassword(auth, email, password)
+// Signed in 
+  return signInWithEmailAndPassword(auth, email, password)
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -128,21 +121,26 @@ const signInUser = () => {
   });	
 }
 //Sign Out
-const signOutUser = async() => signOut(auth).then(() => {
-  // Sign-out successful.
-  console.log ('Success')
-    }).catch((error) => {
-  // An error happened.
-  console.log('error occureded')
-  });
+const signOutUser = async() => {
+  console.log('signout')
+  signOut(auth).then(() => {
+    // Sign-out successful.
+      console.log ('Success')
+      document.getElementById('welcomeEle').innerHTML =''  
+      alert("You are now signed-out!");
+        }).catch((error) => {
+    // An error happened.
+      console.log('error occureded')
+      });
+}
 
 const displayNavbar = ()=>{
 // create a the nav html in your javascript store in variable
 let div = document.createElement("div");
-console.log('username', firebaseUser)
-const welcomeEle = !!firebaseUser.displayName ? `<p>Welcome, ${firebaseUser.displayName}!</p>` : `<span></span>`
 const navigation = `
-${welcomeEle}
+<div id="welcomeEle" class="welcomeEle">     
+</div>
+
 <div class="navbar">
 	<div class="dropdown">
     <button class="dropbtn">Log In
@@ -173,11 +171,16 @@ ${welcomeEle}
 <a href="index.html">Home</a>
 </div>`
 div.innerHTML = navigation
+
 // prepend nav bar to body
 const element = document.querySelector("body");
 element.prepend(div);
 }
-displayNavbar()
+console.log('initial render')
+displayNavbar()  
+let div = document.createElement("welcomeEle");
+console.log('username', firebaseUser)
+console.log('after initial render')
 
 //Create Event listner for Sign-up, Sign-in and Sign-out
 let buttonConfigs = [
@@ -195,18 +198,14 @@ let buttonConfigs = [
     },
 ];
 
-
-
-
 //Using for Each signing functions with a loop
 buttonConfigs.forEach(config => !!document.getElementById(config.id)  && document.getElementById(config.id).addEventListener("click",config.func));
 //Get all blogs in a collection
 const getDocsFromCollection = async (collectionName) => { 
   const documents = []
-/*const q = query (collection(db, "blog_1_comments"),  where ("blog_id","==", "blog_2_comment"));*/
-const q = query (collection(db, blog_comments),  where (blogId,"==", ));
-const querySnapshot = await getDocs(q);
-querySnapshot.forEach((doc) => {
+  const q = query (collection(db, blog_comments),  where (blogId,"==", ));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
   documents.push(doc.data())
 })
 return documents
