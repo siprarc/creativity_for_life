@@ -36,29 +36,33 @@ onAuthStateChanged(auth, (user) => {
 });
 
 async function myFunction(blogId) {
-  const textarea = document.getElementById(`user_comment_${blogId}`);
-  const elemt = textarea.value;
-  const date = new Date();
-  const ISOformattedDate =  date.toISOString()
-
-
-
-//This code will help to handle errors
-  try {
-  // Add a new document in collection "comment"
-  await addDoc(collection(db, `comments_${blogId}`), {
-    userName: firebaseUser.displayName,
-    date: ISOformattedDate,
-    comment: elemt,
-    });
-  } catch (error) {
-    console.log (error)
+  console.log("firebaseuser", firebaseUser)
+  if (!!firebaseUser.displayName){
+    const textarea = document.getElementById(`user_comment_${blogId}`);
+    const elemt = textarea.value;
+    const date = new Date();
+    const ISOformattedDate =  date.toISOString()
+  //This code will help to handle errors
+    try {
+    // Add a new document in collection "comment"
+    await addDoc(collection(db, `comments_${blogId}`), {
+      userName: firebaseUser.displayName,
+      date: ISOformattedDate,
+      comment: elemt,
+      });
+    } catch (error) {
+      console.log (error)
+    }
+  //Add code to clear text area
+  
+    textarea.value = '';
+  //Show comment or error message to screen as soon as the user submit the comment form
+  showCommentToScreen()
+    
   }
-//Add code to clear text area
-
-  textarea.value = '';
-//Show comment or error message to screen as soon as the user submit the comment form
-showCommentToScreen()
+  else {
+    alert('You are not logged in')
+  }
 }
 
 export function addFormToScreen() {
