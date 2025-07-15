@@ -33,25 +33,25 @@ onAuthStateChanged(auth, (user) => {
     console.log(user, firebaseUser, user !== firebaseUser)
     console.log('in auth')
     console.log('done auth')
-let div1 = document.createElement("div");
-  console.log('username', firebaseUser)
-  const welcomeEle = !!firebaseUser.displayName ? `<p>Welcome, ${firebaseUser.displayName}!</p>` : `<span></span>`
-  document.getElementById('welcomeEle').innerHTML = welcomeEle  
-  if (user !== firebaseUser){}
+    let div1 = document.createElement("div");
+    console.log('username', firebaseUser)
+    const welcomeEle = !!firebaseUser.displayName ? `<p>Welcome, ${firebaseUser.displayName}!</p>` : `<span></span>`
+    document.getElementById('welcomeEle').innerHTML = welcomeEle  
+  
   } else {
-  // window.location.href = 'log_in.html'; 
   // Redirect to login if no username
+    firebaseUser={ }
   }
 });
 //Need separate function that get info for email, password; Hint: Object destructuring 
 const getUserInfo = (emailId, passwordId,userNameId) => {
   const email = document.getElementById(emailId).value
   const password = document.getElementById(passwordId).value 
-let userName 
-  if (userNameId) { 
-  userName = document.getElementById(userNameId).value  
-  }
-return({
+  let userName 
+    if (userNameId) { 
+    userName = document.getElementById(userNameId).value  
+    }
+    return({
     email,
     password,
     userName, 
