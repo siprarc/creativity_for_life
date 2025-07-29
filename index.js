@@ -210,3 +210,9 @@ const getDocsFromCollection = async (collectionName) => {
 })
 return documents
 };
+
+//add the log_in.css file to every page using the index.js file
+const link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = 'index.css';
+document.head.appendChild(link)
