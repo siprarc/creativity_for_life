@@ -36,7 +36,6 @@ onAuthStateChanged(auth, (user) => {
 });
 
 async function myFunction(blogId) {
-  console.log("firebaseuser", firebaseUser)
   if (!!firebaseUser.displayName){
     const textarea = document.getElementById(`user_comment_${blogId}`);
     const elemt = textarea.value;
@@ -51,7 +50,8 @@ async function myFunction(blogId) {
       comment: elemt,
       });
     } catch (error) {
-      console.log (error)
+      //console.log (error)
+      console.error("An error occurred:", error.message);
     }
   //Add code to clear text area
   
