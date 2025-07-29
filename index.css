@@ -347,6 +347,9 @@ justify-content: left;
   justify-content: right;
   } 
 
+  /* Add user name welcome name styling to rhs */
 .welcomeEle {
-  justify-content: right;  
+  display:flex;
+  justify-content: right;
 }
+
